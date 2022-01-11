@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         /* reset  */
+         *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style: none;}
+        .clearfix:after{content:"";display: block;clear: both;}
+        a:link,a:visited{color:black;text-decoration: none;}
+        html,body{height: 100%;}
+
+
+        /* box  */
+        .boxWrap{width: 500px;height: 200px;background: pink;position: relative;}
+        .box{width: 100px;height: 30px;}
+        .box1{position: absolute;left: 50%;margin-left:-50px;background: orange;}
+        .box2{position: absolute;left: 50%;margin-left:-50px;bottom: 0;background: orange;}
+        .box3{position: absolute;top: 50%;margin-top:-15px;background: green;}
+        .box4{position: absolute;top: 50%;margin-top:-15px;right: 0;background: green;}
+
+        .cir{
+            position: absolute;
+            left: 50%;top: 50%;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="boxWrap">
+        <div class="box box1">top</div>
+        <div class="box box2">bottom</div>
+        <div class="box box3">left</div>
+        <div class="box box4">right</div>
+    </div>
+
+    <div class="cir"></div>
+</body>
+</html>
