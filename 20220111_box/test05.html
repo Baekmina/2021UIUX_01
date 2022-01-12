@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style: none;}
+        .clearfix:after{content:"";display: block;clear: both;}
+        a:link,a:visited{color:black;text-decoration: none;}
+        html,body{height: 100%;}
+
+        .boxWrap{
+            width: 400px;
+            height: 150px;
+            background-color: pink;
+            position: relative;
+            padding: 10px;
+        }
+        .boxWrap>.box1{
+            width: 100px;
+            height: 100%;
+            background-color: red;
+        }
+        .boxWrap>.box2{
+            width: 200px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+        .boxWrap>.box3{
+            width: 250px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="boxWrap">
+        <div class="box1">logo</div>
+        <div class="box2">util_menu</div>
+        <div class="box3">main_menu</div>
+    </div>
+</body>
+</html>
