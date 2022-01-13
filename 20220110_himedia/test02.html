@@ -11,7 +11,8 @@
     <title>Document</title>
 
     <style>
-        html,body{height: 100%;}
+        /* reset  */
+        html.body{height: 100%;}
         *{margin: 0;padding: 0;box-sizing: border-box;}
         li{list-style: none;}
         .clearfix:after{content:"";display: block;clear: both;}
@@ -22,16 +23,26 @@
             min-width: 980px;
         }
 
-        /* util menu  */
-        .util_wrapper{width: 980px;margin: 0 auto;}
+        /* util menu */
+        .util_wrapper{
+            width: 980px;margin: 0 auto;
+            /* position: relative; */
+        }
         .util_wrapper>ul.util{float: right;}
         .util_wrapper>ul.util>li{float: left;}
-        .util_wrapper>ul.util>li:after{
-            content:"";width: 1px;height: 11px;display: block;background-color: #ccc; position: absolute; top: 7px;
+        .util_wrapper>ul.util>li::after{
+            content:"";
+            width: 1px;height: 11px;
+            display: block;background-color: #ccc;position: absolute;
+            top: 7px;
         }
-        .util_wrapper>ul.util>li:first-child:after{
-            content: "";display: none;
-        }
+        .util_wrapper>ul.util>li:first-child:after{content:"";display: none;}
+        /* .util_wrapper>ul.util>li:last-child:before{
+            content:"";
+            width: 1px;height: 11px;background-color: #ccc;
+            position: absolute;
+            right: 0;
+            top: 7px;} */
         .util_wrapper>ul.util>li>a{display: block;font-size: 12px;padding: 6px 10px;}
 
         .wall{height: 1px;background-color: #c4c4c4;}
@@ -48,10 +59,13 @@
             border-left: 1px solid #356DAA;
         }
         .nav_wrapper>ul.nav>li:last-child{border-right: 1px solid #356DAA;}
-        .nav_wrapper>ul.nav>li>a{display: block;text-align: center;line-height: 45px;color:white;font-weight: bold;}
-        .nav_wrapper>ul.nav>li>a:hover{background-color: #0c2542;}
+        .nav_wrapper>ul.nav>li>a{
+            display: block;text-align: center;line-height: 45px;
+            font-weight: bold; color:white
+        }
+        .nav_wrapper>ul.nav>li>a:hover{background-color: #0f2c4d;}
 
-        /* visual  */
+        /* visual */
         .visual{
             height: 400px;
             background-image: url(images/main_bg01.jpg);
@@ -60,13 +74,10 @@
             background-position: center;
             overflow: hidden;
         }
-        .slide{
-            width: 980px; margin: 0 auto;
-            position: relative;
-        }
-        .slide>.img1{position: absolute;top: 100px;}
-        .slide>.img2{position: absolute;right: 0;}
 
+        .slide{width: 980px;margin: 0 auto; position: relative;}
+        .slide .img1{position: absolute;top: 100px;}
+        .slide .img2{position: absolute;right: 0;}
     </style>
 </head>
 <body>
@@ -88,8 +99,8 @@
     <div class="nav_wrapper">
         <ul class="nav clearfix">
             <li><a href="#">회사소개</a></li>
-            <li><a href="#">회사소개</a></li>
-            <li><a href="#">회사소개</a></li>
+            <li><a href="#">제품소개</a></li>
+            <li><a href="#">사업영역</a></li>
             <li><a href="#">고객센터</a></li>
             <li><a href="#">사회공헌</a></li>
             <li><a href="#">인재채용</a></li>

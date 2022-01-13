@@ -16,6 +16,8 @@
         li{list-style:none;}
         .clearfix:after{content:"";display: block;clear: both;}
         a:link,a:visited{color:black;text-decoration: none;}
+        img{display: block;}
+
         body{
             font-family: 'Roboto', sans-serif;
             min-width: 980px; 
@@ -90,7 +92,6 @@
             /* background-color: pink; */
             position: relative;
             overflow: hidden; /* 부모자 크기를 넘치면 잘라줌 */
-            
         }
 
         .slide .img1{
@@ -102,6 +103,38 @@
             right: 0;  /* overflow: hidden; 부모자 크기를 넘치면 잘라줌 */
         }
         
+        /* banner start  */
+        .bannerWrap{background-color: #eeee;margin-bottom: 50px;}
+        .banner{width: 980px;margin: 0 auto;}
+        .bannerWrap>.banner li{
+            float: left; width: 20%;height: 196px;
+            padding-top: 13px;
+        }
+        .bannerWrap .banner img{margin: 0 auto;margin-bottom: 10px;}
+        .bannerWrap .banner h3{
+            font-size: 18px; text-align: center;margin-bottom: 5px;color:#fff
+        }
+        .bannerWrap .banner p{
+            font-size: 14px; text-align: center;color:#fff
+        }
+        .bannerWrap .banner li:nth-child(1){background-color: #7C99B9;}
+        .bannerWrap .banner li:nth-child(2){background-color: #4F74A1;}
+        .bannerWrap .banner li:nth-child(3){background-color: #4B8CE0;}
+        .bannerWrap .banner li:nth-child(4){background-color: #3DB5F2;}
+        .bannerWrap .banner li:nth-child(5){background-color: #95C8FF;}
+        /* banner end  */
+
+        /* section one  */
+        .section_one{width: 980px;margin: 0 auto;}
+        .section_one li{float: left;width: 310px;margin-right: 25px;}
+        .section_one li:last-child{margin-right: 0;}
+        .section_one .card_body{
+            padding: 16px 16px;
+            border: 1px solid #ccc;
+            border-top: 0;
+        }
+        .section_one h3{font-size: 18px;margin-bottom: 5px;}
+        .section_one p{font-size: 14px;}
     </style>
 </head>
 <body>
@@ -132,12 +165,77 @@
         </nav>
     </header>
     <!-- header end  -->
+
+    <!-- wisual start  -->
     <div class="visual">
         <div class="slide">
             <img src="images/mainVisualText.png" alt="" class="img1">
             <img src="images/main_slider_img.png" alt="" class="img2">
         </div>
     </div>
+    <!-- wisual end  -->
 
+    <!-- banner start  -->
+    <div class="bannerWrap">  <!-- width:100% #eeee -->
+        <div class="banner">  <!-- width:980px m0a -->
+            <ul class="clearfix">
+                <li>
+                    <img src="images/icon01.png" alt="">
+                    <h3>사회공헌</h3>
+                    <p>소외된 이웃과 함께합니다.</p>
+                </li>
+                <li>
+                    <img src="images/icon02.png" alt="">
+                    <h3>윤리경영</h3>
+                    <p>공정한 경쟁을 추구합니다.</p>
+                </li>
+                <li>
+                    <img src="images/icon03.png" alt="">
+                    <h3>인재채용</h3>
+                    <p>넘치는 인재를 모십니다.</p>
+                </li>
+                <li>
+                    <img src="images/icon04.png" alt="">
+                    <h3>기업문화</h3>
+                    <p>유자의 가치를 소개합니다.</p>
+                </li>
+                <li>
+                    <img src="images/icon05.png" alt="">
+                    <h3>비전</h3>
+                    <p>유자는 미래를 선도합니다.</p>
+                </li>
+            </ul>
+        </div> 
+
+    </div>
+    <!-- banner end  -->
+
+    <!-- section start  -->
+    <div class="section_one">
+        <ul class="clearfix">
+            <li class="card_one">
+                <img src="images/content_img01.png" alt="">
+                <div class="card_body">
+                    <h3>회사개요</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quis.</p>
+                </div>
+            </li>
+            <li class="card_one">
+                <img src="images/content_img02.png" alt="">
+                <div class="card_body">
+                    <h3>회사개요</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quis.</p>
+                </div>
+            </li>
+            <li class="card_one">
+                <img src="images/content_img03.png" alt="">
+                <div class="card_body">
+                    <h3>회사개요</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quis.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
 </body>
 </html>
