@@ -1,0 +1,118 @@
+@charset 'utf-8';
+
+body{}
+
+/* logo menu  */
+.logoWrap{width: 1760px;margin: 0 auto;height: 100px;}
+.logoWrap .logo{float: left;padding: 20px 0;}
+.logoWrap .util{float: right;width: 700px;}
+.logoWrap li{float: left;width: 25%;}
+.logoWrap a{
+    font-size: 18px;display: block;text-align: center;line-height: 40px;
+    padding: 20px;font-weight: bold;color:#666;
+}
+.logoWrap a:hover{color:black}
+
+/* visual  */
+.visual{width: 1760px;height: 560px;margin: 0 auto;}
+.visual .bx-wrapper{
+    -moz-box-shadow: 0 0 0 #fff;
+    -webkit-box-shadow: 0 0 0 #fff;
+    box-shadow: 0 0 0 #fff;
+    border: 0 none;
+}
+.visual .bx-wrapper .bx-pager{bottom:160px;right:545px;}
+.visual img{width: 100%}
+
+.visual .main_txt{
+    width: 1200px;margin: 0 auto;
+    position: absolute;top: 150px;left: 280px;
+}
+.visual h1{font-size: 48px;line-height: 69.6px;margin-bottom: 20px;}
+.visual h4{font-size: 16px;line-height: 30.4px;font-weight: bold;}
+
+/* intro  */
+.introWrap{height: 50px;position: relative;margin-bottom: 5px;}
+.intro{
+    width: 1200px;height: 106px;margin: 0 auto;
+    background-color: white;
+    position: absolute;
+    top: -50px;left: 50%;margin-left: -600px;
+}
+.intro h3{
+    text-align: center;padding: 45px 0 0 0;
+    line-height: 39.6px; font-size: 24px;
+}
+
+/* banner  */
+.banner{width: 1200px;margin: 0 auto;}
+.banner .Bintro{}
+.banner li{float: left;width: 396px;height: 178px;margin-right: 5px;position: relative;}
+.banner li:last-child{margin-right: 0;}
+.banner h3{font-size: 24px;position: absolute;top: 50px;left: 50%;margin-left: -80px;}
+.banner p{
+    font-size: 16px;position: absolute;
+    top: 100px;left: 50%;margin-left: -80px;font-weight: bold;
+}
+
+.banner li:nth-child(1){
+    background-image: url(../images/bg-home-type.png);
+    color:white
+}
+.banner li:nth-child(2){background-color: #f7f7f7;}
+.banner li:nth-child(3){background-color: #f7f7f7;}
+
+/* section  */
+.sectionWrap{background-color: #f7f7f7;}
+.section{
+    width: 1200px;margin: 0 auto;margin-top: 40px;
+    padding-top: 45px;
+}
+.section .bx-wrapper{
+    -moz-box-shadow: 0 0 0 #fff;
+    -webkit-box-shadow: 0 0 0 #fff;
+    box-shadow: 0 0 0 #fff;
+    border: 0 none;
+}
+.section .bx-wrapper .bx-pager{bottom:50px;left: 300px;}
+.section img{float: left;}
+.section .card_body{
+    float: left; padding: 30px 40px;
+}
+.section h3{font-size: 28px;margin-bottom: 28px;}
+.section p{font-size: 16px;}
+
+.btnWrap{height: 50px;margin-bottom: 45px;}
+.sectionWrap .btn{width: 1200px;margin: 0 auto;}
+.sectionWrap .btn a{
+    display: block;text-align: center;font-size: 16px;font-weight: bold;
+    
+}
+
+
+/* footer  */
+.footer{width: 1760px;margin: 0 auto;}
+.footerTop{float: left;}
+.footer .ftutil{}
+.footer li{
+    float: left;padding: 5px 8px;position: relative;
+}
+.footer li:after{
+    content:"";width: 1px;height: 13px;background-color: #ccc;
+    position: absolute;top: 9px;left: 1px;
+}
+.footer li:first-child:after{content:"";display: none;}
+.footer .ftutil li:nth-child(1) a{color:black;}
+.footer a,
+.ftutil_two,
+.ftutil_three{
+    display: block;text-align: center;font-size: 14px;
+    font-weight: bold;color:#888888;
+}
+.ftutil_two{margin-top: 40px;}
+.ftutil_two li,
+.ftutil_three li{font-weight: normal;}
+.ftutil_three{margin-top: 5px;}
+
+.footer h2{float: left;margin-top: 40px;color:#888888;padding: 0 5px;}
+.footer p{float: left;padding:45px;color:#888888;font-size: 14px;letter-spacing: -0.3px;}

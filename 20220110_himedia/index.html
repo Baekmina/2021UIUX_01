@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
 
     <style>
@@ -24,160 +25,6 @@
             /* 최소값이 980 / 문서값을 980으로 고정시킴 */
         }
 
-
-        /* header start */
-
-        /* utli menu  */
-        .util_wrapper{
-            width: 980px;
-            margin: 0 auto;
-        }
-        .util_wrapper>ul.util{float: right;}
-        .util_wrapper>ul.util>li{float: left;}
-        .util_wrapper>ul.util>li:after{
-            content:"";width: 1px;height: 11px;
-            display: block;
-            background-color: #ccc;
-            position: absolute;
-            top: 7px;
-        }
-        .util_wrapper>ul.util>li:first-child:after{
-            content:"";display: none;
-        }
-        .util_wrapper>ul.util>li>a{display: block;font-size: 12px;padding: 6px 10px;}
-
-        .wall{height: 1px;background-color:#c4c4c4;}
-
-        /* logo  */
-        .logo_wrapper{width: 980px;margin: 0 auto;padding: 23px;}
-        .logo_wrapper>h1>a{display: block;text-align: center;font-size: 24px;line-height: 28px;}
-
-        /* nav  */
-        .nav_wrapper{background-color: #1D5DA4;border-bottom: 3px solid #000;}
-        .nav_wrapper>.nav{width: 980px;margin: 0 auto;}
-        .nav_wrapper>.nav>li{
-            float: left;width: 16.666%;
-            border-left: 1px solid #356DAA;
-            /* border-right: 1px solid #356DAA; */
-            
-        }
-        .nav_wrapper>.nav>li:first-child{
-            /* border-left: 1px solid #356DAA; */
-        }
-        .nav_wrapper>.nav>li:last-child{
-            border-right: 1px solid #356DAA;
-        }
-        .nav_wrapper>.nav>li:nth-child(6){
-            /* background-color: orange; */
-        }
-        .nav_wrapper>.nav>li>a{
-            display: block;text-align: center;line-height: 45px;color:white;
-            font-weight: bold;
-        }
-        .nav_wrapper>.nav>li>a:hover{background-color: #0b2542;}
-
-        /* header end  */
-
-        .visual{
-            background-color: #213C6B;
-            background-image: url(images/main_bg01.jpg);
-            background-repeat: no-repeat;
-            background-position: center;
-            height: 400px;
-        }
-
-        .slide{
-            width: 980px;height: 400px;
-            margin: 0 auto;
-            /* background-color: pink; */
-            position: relative;
-            overflow: hidden; /* 부모자 크기를 넘치면 잘라줌 */
-        }
-
-        .slide .img1{
-            position: absolute;
-            top: 100px;
-        }
-        .slide .img2{
-            position: absolute;
-            right: 0;  /* overflow: hidden; 부모자 크기를 넘치면 잘라줌 */
-        }
-        
-        /* banner start  */
-        .bannerWrap{background-color: #eeee;margin-bottom: 50px;}
-        .banner{width: 980px;margin: 0 auto;}
-        .bannerWrap>.banner li{
-            float: left; width: 20%;height: 196px;
-            padding-top: 13px;
-        }
-        .bannerWrap .banner img{margin: 0 auto;margin-bottom: 10px;}
-        .bannerWrap .banner h3{
-            font-size: 18px; text-align: center;margin-bottom: 5px;color:#fff
-        }
-        .bannerWrap .banner p{
-            font-size: 14px; text-align: center;color:#fff
-        }
-        .bannerWrap .banner li:nth-child(1){background-color: #7C99B9;}
-        .bannerWrap .banner li:nth-child(2){background-color: #4F74A1;}
-        .bannerWrap .banner li:nth-child(3){background-color: #4B8CE0;}
-        .bannerWrap .banner li:nth-child(4){background-color: #3DB5F2;}
-        .bannerWrap .banner li:nth-child(5){background-color: #95C8FF;}
-        /* banner end  */
-
-        /* section one  */
-        .section_one{width: 980px;margin: 0 auto;margin-bottom: 25px;}
-        .section_one li{float: left;width: 310px;margin-right: 25px;}
-        .section_one li:last-child{margin-right: 0;}
-        .section_one .card_body{
-            padding: 16px 16px;
-            border: 1px solid #ccc;
-            border-top: 0;
-        }
-        .card_body h3{font-size: 18px;margin-bottom: 5px;} /* section one=two 같은 상황이기 때문에  */
-        .card_body p{font-size: 14px;} /* section one=two 같은 상황이기 때문에  */
-        .card_body .btn{font-size: 14px;color:#6199e2;font-weight: bold;}
-
-        /* section two  */
-        .section_two{width: 980px;margin: 0 auto;margin-bottom: 50px;}
-        .section_two li.card_two{
-            float: left;width: 310px;margin-right: 25px;
-            border: 1px solid #ccc;
-            padding: 16px;
-            position: relative;
-            overflow: hidden;
-        }
-        .section_two li:last-child{margin-right: 0;}
-        .section_two .card_two img{
-            position: absolute; right: -30px; top: 14px;
-        }
-        .card_two .card_body{position: relative;}
-        .card_two .card_body h3,
-        .card_two .card_body p{margin-bottom: 15px;}
-
-        /* footer  */
-        .footerWrap{background-color: #5e5e5e;}
-        .footerTopWrap{background-color: #4d4d4d;}
-        .footerWrap .footerTop{width: 980px;margin: 0 auto;}
-        .footerWrap .footerMenu{float: left;}
-        .footerWrap .footerMenu li{float: left;position: relative;}
-        .footerWrap .footerMenu li:after{
-            content:"";display: block;width: 1px;height: 13px;background: #fff;
-            position: absolute;top: 13px;
-        }
-        .footerWrap .footerMenu li:first-child:after{content:"";display: none;}
-        .footerWrap .footerMenu li a{
-            display: block;line-height: 16px;text-align: center;
-            font-size: 13px;color:white;padding: 13px 15px;
-            letter-spacing: -0.075em;
-        }
-        .footerWrap .footerMenu li:first-child a{padding-left: 0;}
-
-        .footerWrap .top{float: right;}
-
-        .footerWrap .footerBottom{width: 980px;margin: 0 auto;padding: 20px 0;}
-        .footerWrap .footerBottom h3{float: left;width: 120px;}
-        .footerWrap .footerBottom .fbRight{float: left;}
-        .footerWrap address{font-style: normal;color: #a2a2a2;font-style: 12px;}
     </style>
 </head>
 <body>
@@ -282,24 +129,24 @@
 
     <div class="section_two">
         <ul class="clearfix">
-            <li class="card_two">
-                <img src="images/content_icon01.png" alt="">
+            <li class="card_two" style="background-image: url(images/content_icon01.png);">
+                <!-- <img src="images/content_icon01.png" alt=""> -->
                 <div class="card_body">
                     <h3>사보</h3>
                     <p>풍부한 경험과 최고의 <br>기술력으로 새로운 미래를<br>열어갑니다.</p>
                     <div class="btn">자세히보기</div>
                 </div>
             </li>
-            <li class="card_two">
-                <img src="images/content_icon02.png" alt="">
+            <li class="card_two" style="background-image: url(images/content_icon02.png);">
+                <!-- <img src="images/content_icon02.png" alt=""> -->
                 <div class="card_body">
                     <h3>찾아오시는 길</h3>
                     <p>풍부한 경험과 최고의 <br>기술력으로 새로운 미래를<br>열어갑니다.</p>
                     <div class="btn">자세히보기</div>
                 </div>
             </li>
-            <li class="card_two">
-                <img src="images/content_icon03.png" alt="">
+            <li class="card_two" style="background-image: url(images/content_icon03.png);">
+                <!-- <img src="images/content_icon03.png" alt=""> -->
                 <div class="card_body">
                     <h3>제품정보</h3>
                     <p>풍부한 경험과 최고의 <br>기술력으로 새로운 미래를<br>열어갑니다.</p>
