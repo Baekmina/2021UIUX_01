@@ -10,12 +10,12 @@
     .wall{display: none;}
     .nav_wrapper{display: none;}
     .logo_wrapper{
-        background: skyblue;
+        /* background: skyblue; */
         width: 100%;
         padding: 16px;
         position: relative;
     }
-    .logo_wrapper h1{width: 150px;text-align-last: left;}
+    /* .logo_wrapper h1{width: 150px;text-align-last: left;} */
     .logo_wrapper .toggle{
         width: 35px;height: 35px;
         border: 1px solid #000;
@@ -52,7 +52,51 @@
         border-radius: 1px;
         position: absolute;
     } 
+    /* translate : 위(-), 아래(+)  */
     .logo_wrapper .toggle .bar1{transform: translateY(-7px);}
     .logo_wrapper .toggle .bar3{transform: translateY(7px);}
+
+
+
+    /* visual */
+    .visual{background-size: 300%;height: 300px;}
+    .slide{
+        width: 100%;
+        height: 300px;
+    }
+    .slide .img1{
+        width: 300px;
+        top: 50px;left: 30px;
+    }
+    .slide .img2{
+        width: 300px;
+        right: -40px;
+        bottom: -50px;
+    }
+
+    /* bannerwrap  */
+    .bannerWrap{background-color: initial;}
+    .banner{
+        width: 100%;
+        padding: 0 16px;
+        margin-top: -20px;
+        position: relative;
+        
+    }
+    .bannerWrap .banner ul{
+        box-shadow: 0 0 10px rgba(0,0,0,0.8);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .bannerWrap .banner li{width: 50%;}
+    .bannerWrap .banner li:last-child{
+        width: 100%;
+        display: none;
+    }
+
+    /* section one */
+    .section_one{width: 100%;padding: 0 16px;}
+    .section_one li.card_one{width: 100%;margin-bottom: 16px;text-align: center;}
+    .section_one li.card_one img{width: 100%;}
 
 /* mobile end  */
