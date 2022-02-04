@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_mobile.css">
 
 
     <style>
@@ -19,10 +20,12 @@
         a:link,a:visited{color:black;text-decoration: none;}
         img{display: block;}
 
-        body{
-            font-family: 'Roboto', sans-serif;
-            min-width: 980px; 
-            /* 최소값이 980 / 문서값을 980으로 고정시킴 */
+        @media screen and (min-width:721px){
+            body{
+                font-family: 'Roboto', sans-serif;
+                min-width: 980px; 
+                /* 최소값이 980 / 문서값을 980으로 고정시킴 */
+            }
         }
 
     </style>
@@ -41,6 +44,12 @@
         <div class="wall"></div>
         <div class="logo_wrapper">
             <h1 class="logo"><a href="#">하이미디어</a></h1>
+            <div class="toggle">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+
         </div>
         
         <nav class="nav_wrapper"> <!-- backgroundcolor -->
@@ -57,7 +66,7 @@
     <!-- header end  -->
 
     <!-- wisual start  -->
-    <div class="visual">
+    <div class="visual" style="display: none;">
         <div class="slide">
             <img src="images/mainVisualText.png" alt="" class="img1">
             <img src="images/main_slider_img.png" alt="" class="img2">
@@ -66,7 +75,7 @@
     <!-- wisual end  -->
 
     <!-- banner start  -->
-    <div class="bannerWrap">  <!-- width:100% #eeee -->
+    <div class="bannerWrap" style="display: none;">  <!-- width:100% #eeee -->
         <div class="banner">  <!-- width:980px m0a -->
             <ul class="clearfix">
                 <li>
@@ -101,7 +110,7 @@
     <!-- banner end  -->
 
     <!-- section start  -->
-    <div class="section_one">
+    <div class="section_one" style="display: none;">
         <ul class="clearfix">
             <li class="card_one">
                 <img src="images/content_img01.png" alt="">
@@ -127,7 +136,7 @@
         </ul>
     </div>
 
-    <div class="section_two">
+    <div class="section_two" style="display: none;">
         <ul class="clearfix">
             <li class="card_two" style="background-image: url(images/content_icon01.png);">
                 <!-- <img src="images/content_icon01.png" alt=""> -->
@@ -156,7 +165,7 @@
         </ul>
     </div>
     
-    <footer class="footerWrap">
+    <footer class="footerWrap" style="display: none;">
         <div class="footerTopWrap">
             <div class="footerTop clearfix">
                 <nav class="footerMenu">

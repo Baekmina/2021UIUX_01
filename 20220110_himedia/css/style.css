@@ -5,6 +5,8 @@
         .util_wrapper{
             width: 980px;
             margin: 0 auto;
+            min-width: 980px;
+            /* 모바일 버전을 만들 때 펼쳤을 때 안끊기도록 min-width값을 넣어주어야 함  */
         }
         .util_wrapper>ul.util{float: right;}
         .util_wrapper>ul.util>li{float: left;}
@@ -54,7 +56,7 @@
 
         .visual{
             background-color: #213C6B;
-            background-image: url(images/main_bg01.jpg);
+            background-image: url(../images/main_bg01.jpg);
             background-repeat: no-repeat;
             background-position: center;
             height: 400px;
