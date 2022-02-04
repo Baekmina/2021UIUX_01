@@ -1,0 +1,81 @@
+@charset 'utf-8';
+
+@media screen and (max-width:720px){
+    body{
+        max-width: 720px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .util_wrapper{display: none;}
+    .wall{display: none;}
+    .nav_wrapper{display: none;}
+
+    .logo_wrapper{
+        width: 100%;padding: 16px;
+        position: relative;
+    }
+    .logo_wrapper .toggle{
+        width: 35px;height: 35px;
+        border: 1px solid #333;
+        position: absolute;
+        right: 16px;top: 12px;
+        cursor: pointer;
+    }
+    .logo_wrapper .toggle{
+        display: flex;justify-content: center;align-items: center;
+    }
+    .logo_wrapper .toggle div{
+        width: 24px;height: 2px;background: #aaa;
+        border-radius: 1px;
+        position: absolute;
+    }
+    .logo_wrapper .toggle .bar1{transform: translateY(-7px);}
+    .logo_wrapper .toggle .bar3{transform: translateY(7px);}
+
+    /* visual  */
+    .visual{height: 300px;background-size: 300%;}
+    .slide{width: 100%;height: 300px;}
+    .slide .img1{width: 300px;top: 50px;left: 30px;}
+    .slide .img2{width: 300px;right: -40px;bottom: -50px;}
+
+    /* banner  */
+    .bannerWrap{background-color: initial;}
+    .banner{
+        width: 100%;
+        padding: 0 16px;
+        margin-top: -20px;
+        position: relative;
+    }
+    .bannerWrap .banner ul{
+        box-shadow: 0 0 10px rgba(0,0,0,0.8);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .bannerWrap .banner li{width: 50%;}
+    .bannerWrap li:last-child{display: none;}
+
+    /* section one  */
+    .section_one{width: 100%;padding: 0 16px;}
+    .section_one li{
+        width: calc( (100% - 16px) / 2 );
+        text-align: center;
+        margin-right: 16px;margin-bottom: 16px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .section_one li img{width: 100%;}
+    .section_one li:nth-child(2){margin-right: 0;}
+    .section_one li:last-child{display: none;}
+
+    /* section two  */
+    .section_two{width: 100%;padding: 0 16px;}
+    .section_two li.card_two{
+        width: calc( (100% - 16px) / 2);
+        background-position: right center;
+        background-size: 100px;
+        margin-right: 16px;margin-bottom: 16px;
+        border-radius: 10px;
+    }
+    .section_two li:nth-child(2){margin-right: 0;}
+    .section_two li p{display: none;}
+}
