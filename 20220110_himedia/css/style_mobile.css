@@ -96,7 +96,13 @@
 
     /* section one */
     .section_one{width: 100%;padding: 0 16px;}
-    .section_one li.card_one{width: 100%;margin-bottom: 16px;text-align: center;}
+    .section_one li.card_one{
+        width: calc( (100% - 16px) / 2 );margin-bottom: 16px;
+        text-align: center;
+        margin-right: 16px;
+    }
     .section_one li.card_one img{width: 100%;}
+    .section_one li:nth-child(2){margin-right: 0;}
+    .section_one li:last-child{display: none;}
 
 /* mobile end  */
