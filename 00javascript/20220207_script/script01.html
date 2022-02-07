@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{color: red;font-weight: bold;}
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <h1 id="baek">hello javascript</h1>
+
+    <script>
+        var age = 25;
+        var name = "홍길동";
+        name = "손오공";
+        age = 50;
+        // 변수공간에서 이름, 나이만 바꿔줄때는 var을 사용할 필요X
+        document.write("나이 : " + age + "살<br>");
+        document.write("이름 : <a href='http://www.naver.com'> "+ name + "</a>");
+        document.write('이름 : <span class="red">' + name + '</span')
+        console.log("이름 : " + name) // 검사창 console 창에 뜨는것
+        // 바깥쪽에서 쌍따옴표로 시작하면 끝나는 부분을 쌍따옴표로 찾기 때문에 에이태그 안에 홀따옴표로 해줘야 오류X
+        // 홀따옴표로 시작하면 안쪽에 쌍따옴표로 해줘야 오류X
+        // window.document.write() 문서.메소드().메소드() / 문서.속성
+    </script>
+</body>
+</html>
