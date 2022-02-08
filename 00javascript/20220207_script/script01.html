@@ -13,9 +13,25 @@
     </script>
 </head>
 <body>
-    <h1 id="baek">hello javascript</h1>
+    <h1 id="top">hello javascript</h1>
 
-    <script>
+    <button type="botton" onclick="alert('홈페이지를 잠시 닫습니다!!!')">누르세요</button>
+    <!-- alert : 경고창  -->
+
+    <div class="btn" onclick="alert('바보')">누르지마세요</div>
+
+    <a href="#baek">누르면안됨</a>
+    Lorem ipsum dolor sit amet consectetur adipisicing.
+    <!-- 누르면 안됨을 클릭하면 밑에 id=baek으로 넘어감  -->
+    <div id="baek">Lorem ipsum dolor sit amet.</div>
+
+    <a href="#top">top</a>
+    <!-- 누르면 맨위 id=top으로 감  -->
+    
+    <a href="javascript:void(0)" class="btn">shap</a>
+    <!-- #은 맨위로 올라가게 함 / javascript:void(0)은 위로 올라가지 않게 해줌  -->
+
+    <!-- <script>
         var age = 25;
         var name = "홍길동";
         name = "손오공";
@@ -28,6 +44,6 @@
         // 바깥쪽에서 쌍따옴표로 시작하면 끝나는 부분을 쌍따옴표로 찾기 때문에 에이태그 안에 홀따옴표로 해줘야 오류X
         // 홀따옴표로 시작하면 안쪽에 쌍따옴표로 해줘야 오류X
         // window.document.write() 문서.메소드().메소드() / 문서.속성
-    </script>
+    </script> -->
 </body>
 </html>
