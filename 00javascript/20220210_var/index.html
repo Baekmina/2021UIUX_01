@@ -29,8 +29,8 @@
         //     document.write("수학점수는 " + math);
         //     document.write(eng);
         // };
-        function print(){
-            const dan = 3;
+        function print(dan){
+            // let dan = 3;
             // 요즘엔 var 사용x, const나 let 사용함
             document.write(dan + "단 입니다.<br>")
             document.write(dan + " * 1 =" + dan*1 +"<br>");
@@ -53,23 +53,31 @@
 
     <div style="background-color:pink">
         <script>
-            print();
+            print(7);
         </script>
     </div>
     <div style="background-color:skyblue">
         <script>
-            print();
+            print(6);
         </script>
     </div>
     <div style="background-color:yellow">
         <script>
-            print();
+            print(5);
         </script>
     </div>
 
-    <style>
-        .han{background-image: url();}
-        .han{width: calc();}
-    </style>
+
+    <script>
+        function callData(){
+            var data = 100;
+            return data;
+        }
+
+        var getData = callData();
+        document.write(getData);
+    </script>
+
+
 </body>
 </html>
