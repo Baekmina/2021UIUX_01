@@ -24,17 +24,18 @@
                     <legend class="blind">아이디/비밀번호</legend>
                     <p class="field">
                         <label for="user-id" class="blind">아이디</label>
-                        <input type="text" id="user-id" name="id" placeholder="아이디입력" class="inp-field">
+                        <input type="text" id="user-id" name="id" placeholder="아이디입력" class="inp-field" required>
                         <span class="icon email">@naver.com</span>
+                        <!-- required - 입력란을 작성하세요 -->
                     </p>
                     <p class="field">
                         <label for="user-pass" class="blind">비밀번호</label>
-                        <input type="text" id="user-pass" name="pass1" placeholder="비밀번호입력" class="inp-field">
+                        <input type="text" id="user-pass" name="pass1" placeholder="비밀번호입력" class="inp-field" required>
                         <span class="icon pass1">비밀번호</span>
                     </p>
                     <p class="field">
                         <label for="user-pass" class="blind">비밀번호확인</label>
-                        <input type="text" id="user-pass" name="pass2" placeholder="비밀번호확인" class="inp-field">
+                        <input type="text" id="user-pass" name="pass2" placeholder="비밀번호확인" class="inp-field" required>
                         <span class="icon pass2">비밀번호</span>
                     </p>
                 </fieldset>
@@ -55,7 +56,8 @@
                     </p>
                     <p class="field birth">
                         <label for="user-birth">생일</label>
-                        <input type="text" id="user-birth" name="user-birth" placeholder="년도(4자)" class="inp-field w130">
+                        <input type="text" id="user-birth" name="user-birth" placeholder="년도(4자)" class="inp-field w130" maxlength="4">
+                        <!-- maxlength="4" -> 글자 수 4개까지만 작성가능 -->
                         <span class="field-wall">|</span>
                         <!-- shift + \(원표시) 누르면 -> | -->
                         <select name="month">
@@ -74,7 +76,7 @@
                             <option value="12">12월</option>
                         </select>
                         <span class="field-wall">|</span>
-                        <input type="text" name="day" placeholder="일" class="inp-field w145">
+                        <input type="text" name="day" placeholder="일" class="inp-field w145" maxlength="2">
                     </p>
                     <p class="field">
                         <label for="user-cemail" class="blind">본인확인 이메일</label>
@@ -101,7 +103,7 @@
                     </p>
                 </fieldset>
 
-                <input type="submit" value="회원가입">
+                <input type="submit" value="가입하기" class="btn-submit">
             </form>
         </div>
     </div>
