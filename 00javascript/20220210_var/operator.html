@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function name(){
+            var str = "백";
+            var str1 = "민아";
+            
+            var name = str + str1;
+    
+            document.write(name)
+            // document.write(str + str1)
+            //  변수와 변수일 때는 더하기
+
+        }
+
+        function add(){
+            var num1 = 5;
+            var num2 = 2;
+            var total = num1 % num2;
+            // %는 숫자(5 나누기 2)의 나머지 값(1)을 구할 때 사용  
+            // document.write(total);
+
+            if(total == 0){
+                var answer = "짝수";
+            }else{
+                answer = "홀수";
+            }
+
+            document.write(answer+ "<br>");
+        }
+
+        add(); //call -> 실행
+
+
+        function plus(){
+            var num = 10;
+            // num = num + 1;
+            // num++; // 위에 변수와 똑같음
+
+            document.write("plus 값은 " + num++ + "<br>"); // 후위연산자
+            document.write("plus 값은 " + num);
+        }
+        plus();
+
+    </script>
+
+    <div class="total">홀수일까요 짝수일까요? <script>add();</script></div>
+
+</body>
+</html>
