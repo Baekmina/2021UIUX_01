@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{background: skyblue;}
+    </style>
+
+</head>
+<body>
+    <div id="age">데이터가 없습니다.</div>
+    <script>
+        var text= "안녕하세요!";
+        text = text + " 홍길동님!!"; // text += " 홍길동님"
+        text += "<br>만나서 반갑습니다." 
+
+        document.write(text);
+
+        function textOne(){
+            var name = "백민아";
+            var txt; // undefined(변수명이 지정X)
+
+            txt = "<div class='box'>"; // 처음에는 + 없이 해야 오류X
+            txt += "안녕하세요. " + name;
+            txt += "님, 만나서 반갑습니다.";
+            txt += "</div>";
+
+            console.log(txt);
+
+            document.write(txt);
+        };
+        // textOne(); // 함수호출
+    </script>
+
+    <h1><script>textOne();</script></h1>
+
+
+    <script>
+        // 비교연산자
+        var x = 10;
+        var y = 20;
+        var data = ( x < y );
+        console.log(data); 
+
+    </script>
+
+    <script>
+        // 조건연산자
+        var x = 10;
+        var y = 5;
+        var result;
+
+        // result = ( x > y )? x:y; // true면 x, false면 y값이 나옴
+        result = ( x > y )? "x값이 큽니다":"y값이 큽니다";
+
+        document.write("큰 값은 " + result + "<br>");
+    </script>
+
+    <script>
+        // 제어문
+        var gender = "f"; // 여성
+        var age = 18;
+        var result1;
+
+        // if(조건문){ true일때 실행; }
+        // if(조건문){ true일때 실행; }else{ false일때 실행; }
+
+        if(gender == "f"){
+
+            if(age >= 19){
+                result1 = "여자 성인입니다.";
+            }else{
+                result1 = "여자 미성년입니다.";
+            }
+
+        }else{
+
+            if(age >= 19){
+                result1 = "남자 성인입니다.";
+            }else{
+                result1 = "남자 미성년입니다.";
+            }
+        }
+
+        // document.write(result1);
+
+        document.getElementById("age").innerHTML = result1;
+    </script>
+</body>
+</html>
