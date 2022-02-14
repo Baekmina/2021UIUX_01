@@ -33,6 +33,7 @@
             }else{
                 answer = "홀수";
             }
+            //if = 조건문
 
             document.write(answer+ "<br>");
         }
@@ -46,9 +47,61 @@
             // num++; // 위에 변수와 똑같음
 
             document.write("plus 값은 " + num++ + "<br>"); // 후위연산자
-            document.write("plus 값은 " + num);
+            document.write("plus 값은 " + num + "<br>");
         }
         plus();
+
+
+        function con(){
+            // var a = 20;
+            var a = "20"; //string 문자
+            var b = 20; //number 숫자
+            var result;
+
+            // result = (a > b); //a가 b보다 크냐고 묻는 질문
+            //아니면 false 값, 맞으면 true 값이 나옴.
+
+            result = (a != b); 
+            // 문자나 숫자가 같아도 "==="를 사용하면 타입까지 계산. (많이 사용X)
+            // "=="를 오히려 많이 사용.
+            document.write(result + "<br>");
+        }
+
+        con();
+
+
+        function conf(){
+            var num = 10;
+            var num1 = 20;
+
+            var result;
+
+            // if(대입연산자){ true 실행 }; //true가 실행 , false는 실행X
+            // if(대입연산자){ true 실행 } else { false 실행 };
+
+
+            if( num > num1 ){
+                document.write("num이 당연히 크죠!");
+            }
+            // 조건문에 false가 나오면 아무것도 실행이 안됨 ex) num=10; num1=20; 일 때
+
+
+            if( num == num1){
+                // true실행
+                // document.write("당연히 같죠!");
+                result = "당연히 같죠!!";
+            }else{
+                // false실행
+                // document.write("같지않아요!");
+                result = "같지않아요!!";
+            }
+
+            document.write(result);44
+
+        }
+
+        conf();
+
 
     </script>
 
