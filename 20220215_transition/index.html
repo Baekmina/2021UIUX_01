@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="../css/reset.css">
 
     <style>
-        body{display: flex;justify-content: center;align-items: center;}
+        body{
+            display: flex;justify-content: center;align-items: center;
+            background: linear-gradient(90deg, #30cfd0 0%, #330867 100%);
+            /* 피그마 그라디언트로 색상 추출해서 붙여넣기 */
+            min-width: 1000px;
+        }
         /* reset.css -> height 100%가 아닐경우 가운데로 못 옴  */
         
         .box01{
@@ -18,6 +23,7 @@
             transform: translate(0,0);
             transition: 0.3s;
             position: relative;
+            cursor: pointer;
         }
         .box01 img{
             max-width: 100%;display: block;
@@ -49,23 +55,69 @@
             transition: 0.3s; /* barWrap 돌리기 위해서 */
             
         }
-        .barWrap div{
+        /* +,- 만드는 방법 */
+        .barWrap:after{
+            content:"";
+            position: absolute;width: 20px;height: 4px;
+            background: #fff;border-radius: 2px;
+            
+        }
+        .barWrap:before{
+            content:"";
+            position: absolute;width: 20px;height: 4px;
+            background: #fff;border-radius: 2px;
+            transform: rotate(90deg);
+        }
+
+
+        /* .barWrap div{
             position: absolute;
             width: 20px;height: 4px;background: #fff;
             border-radius: 2px;
         }
         .barWrap div.bar2{
             transform: rotate(90deg);
-        }
+        } */
+
+
         .box01:hover .barWrap{
             transform: translate(-50%,-50%) rotate(180deg);
             /* ->translate 값을 맞춰주지 않으면 기본 0,0 값으로 알고 있기 때문에 변경  */
         }
+
+
+        .box01 .bg{
+            width: 100%;height: 100%;
+            position: absolute;
+            top: 0;left: 0;
+            background: rgba(0,101,153,0.3);
+            transition: 0.3s;
+        }
+
+        .box01:hover .bg{opacity: 0;}
     </style>
 </head>
 <body>
-    <div class="box01">
+    <div class="box01" onclick="location.href='http://www.naver.com'">
         <img src="../image//testimg.jpg" alt="">
+        <div class="bg"></div>
+        <div class="barWrap">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+        </div>
+        <!-- barWrap을 bg보다 아래로 하면 색깔을 먹지 않음. 순서 바꿔줄 것 -->
+    </div>
+    <div class="box01" onclick="location.href='http://www.naver.com'">
+        <img src="../image//testimg.jpg" alt="">
+        <div class="bg"></div>
+        <div class="barWrap">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+        </div>
+    </div>
+    <div class="box01" onclick="location.href='http://www.naver.com'">
+        <img src="../image//testimg.jpg" alt="">
+        <div class="bg"></div>
         <div class="barWrap">
             <div class="bar1"></div>
             <div class="bar2"></div>
