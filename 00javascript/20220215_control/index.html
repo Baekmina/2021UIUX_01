@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <span id="name">홍길동</span> 님은 <span id="adult">000</span>
+    </div>
+
+
+
+    <script>
+
+
+        // var login = true;
+
+        // if( login == true ){
+        //     document.write("백민아님 안녕하세요. 로그인되셨습니다.")
+        // }else{
+        //     document.write("<button>로그인</button>")
+        // }
+        var age = 18;
+        var name = "백민아";
+        var result;
+
+        if(age >= 19){
+            // document.write("성인입니다.");
+            result = "성인입니다.";
+        }else{
+            // document.write("성인이 아닙니다.");
+            result = "미성년입니다.";
+        }
+
+        // document.write(result)
+        var aEle = document.getElementById("adult");
+
+        console.log(aEle.innerHTML);
+        aEle.innerHTML = result;
+
+        console.log(document.getElementById("name").innerHTML) // 홍길동 / 값을 보기 위해 console
+
+        var nameEle = document.getElementById("name");
+
+        nameEle.innerHTML = name;
+
+        nameEle.style.backgroundColor = "skyblue"
+        // 자바스크립트에서는 -를 넣을 수가 없어서 그 다음문자를 대문자로 입력
+        nameEle.style.display = "block";
+        nameEle.style.border = "1px solid #000";
+    </script>
+</body>
+</html>
