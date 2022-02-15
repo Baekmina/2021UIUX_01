@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        body{
+            background-image: url(images/bg02.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;justify-content: center;align-items: center;
+        }
+        .wrap{position: relative;}
+        .wrap form{display: flex;}
+        .wrap label{
+            display: block;width: 60px;height: 20px;
+            background-image: url(images/searchtext.jpg);
+            text-indent: -9999px;  
+            position: absolute;
+            align-self: center; /*align-items 보다 우선순위가 높음, 자기자신을 센터에 놓음. */
+            left: 15px;
+            /* transform: translateY(-30px); */
+            /* flex로 가운데로 모았지만 조금 올려주고 싶을 때 */
+        }
+        .wrap .inp-search{
+            width: 400px;height: 50px;
+            border-radius: 25px;
+            text-indent: 90px;
+            border: 3px solid #aaa;
+            font-size: 16px;
+        }
+        .wrap .inp-search:focus{outline: 0 none;}
+        .wrap .btn-search{
+            width: 40px;height: 40px;
+            position: absolute;
+            align-self: center;right: 15px;
+            border: 0 none;
+            background-image: url(images/search.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #fff;
+            text-indent: -9999px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <form action="#">
+            <label for="search">search</label>
+            <input type="text" id="search" name="search" placeholder="검색어를 입력하세요" class="inp-search">
+            <input type="submit" class="btn-search" value="button">
+        </form>
+    </div>
+</body>
+</html>
