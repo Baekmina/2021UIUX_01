@@ -16,7 +16,7 @@
 
         // 변수 data / literal = number,striong,boolean,array,object,null,undefined
 
-        var point = 60;
+        var point = 85;
         var grade = "";
 
         if(point >= 90){
@@ -41,23 +41,23 @@
         var jum = 90;
         var jumWr = "";
 
-        if(jum >= 90 && jum < 100){
+        if(jum >= 90 && jum <= 100){ // 100점~90점
             jumWr = "A";
         }
-        if(jum >= 80 && jum < 90){
+        if(jum >= 80 && jum < 90){ // 89점~80점
             jumWr = "B";
         }
-        if(jum >= 70 && jum < 70){
+        if(jum >= 70 && jum < 80){ // 79점~70점
             jumWr = "C";
         }
-        if(jum >= 60 && jum < 60){
+        if(jum >= 60 && jum < 70){ // 69점~60점
             jumWr = "D";
         }
-        if(jum < 60){
+        if(jum < 60){ // 59점 이하
             jumWr = "F";
         }
 
-        // a && b = a와 b가 모두 true일 때, 값이 나옴. 만약 하나라도 false가 나오면 성립 X 
+        // &&(논리곱) : a && b = a와 b가 모두 true일 때, 값이 나옴. 만약 하나라도 false가 나오면 성립 X 
 
         document.write(jumWr + "등급입니다.")
 
