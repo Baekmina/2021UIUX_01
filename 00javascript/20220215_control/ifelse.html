@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body id="dayColor">
     <script>
         // if(조건문){ t };
         // if(조건문){ t }else{ f }; //가장 많이 사용함.
@@ -59,8 +59,68 @@
 
         // &&(논리곱) : a && b = a와 b가 모두 true일 때, 값이 나옴. 만약 하나라도 false가 나오면 성립 X 
 
-        document.write(jumWr + "등급입니다.")
+        document.write(jumWr + "등급입니다.<br>");
 
+
+        // var num = new Date().getMonth();
+        // console.log( num+1 + "월")
+        var num = new Date().getDay();
+        var today = "";
+        var bgColor = "";
+        
+        // if(num == 0){
+        //     today = "일";
+        // }
+        // if(num == 1){
+        //     today = "월";
+        // }
+        // if(num == 2){
+        //     today = "화";
+        // }
+        // if(num == 3){
+        //     today = "수";
+        //     bgColor = "skyblue"
+        // }
+        // if(num == 4){
+        //     today = "목";
+        //     bgColor = "pink"
+        // }
+        // if(num == 5){
+        //     today = "금";
+        // }
+        // if(num == 6){
+        //     today = "토";
+        // }
+
+        switch(num){
+            case 0:
+                today = "일";
+                break;
+            case 1:
+                today = "월";
+                break;
+            case 2:
+                today = "화";
+                break;
+            case 3:
+                today = "수";
+                bgColor = "skyblue";
+                break;
+            case 4:
+                today = "목";
+                break;
+            case 5:
+                today = "금";
+                break;
+            case 6:
+                today = "토";
+                break;
+        }
+
+
+        document.write(today + "요일");
+
+        document.getElementById("dayColor").style.backgroundColor = bgColor
     </script>
 </body>
 </html>
