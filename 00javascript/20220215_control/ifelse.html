@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // if(조건문){ t };
+        // if(조건문){ t }else{ f }; //가장 많이 사용함.
+        // if(조건문){ t }else if(조건문){ t }else{ f };
+
+        // if(a != b){ t }; // ! = not 
+
+        // 변수 data / literal = number,striong,boolean,array,object,null,undefined
+
+        var point = 60;
+        var grade = "";
+
+        if(point >= 90){
+            grade = "A";
+        }else if(point >= 80){
+            grade = "B";
+        }else if(point >= 70){
+            grade = "C";
+        }else if(point >= 60){
+            grade = "D";
+        }else{
+            grade = "F";
+        }
+
+        document.write(grade + "등급입니다.<br>")
+
+
+
+
+        // if문으로만 할 때
+
+        var jum = 90;
+        var jumWr = "";
+
+        if(jum >= 90 && jum < 100){
+            jumWr = "A";
+        }
+        if(jum >= 80 && jum < 90){
+            jumWr = "B";
+        }
+        if(jum >= 70 && jum < 70){
+            jumWr = "C";
+        }
+        if(jum >= 60 && jum < 60){
+            jumWr = "D";
+        }
+        if(jum < 60){
+            jumWr = "F";
+        }
+
+        // a && b = a와 b가 모두 true일 때, 값이 나옴. 만약 하나라도 false가 나오면 성립 X 
+
+        document.write(jumWr + "등급입니다.")
+
+    </script>
+</body>
+</html>
