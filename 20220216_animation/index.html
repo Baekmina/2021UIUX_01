@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <style>
+        body{
+            background-image: url(../image/pc02.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .box{
+            width: 100px;height: 100px;
+            background: skyblue;
+            position: absolute;
+            left: 0;
+            animation-name:boxani; /* 애니메이션의 이름을 정해줘야함  */
+            animation-duration: 2s;
+            animation-timing-function: ease; 
+            animation-fill-mode:forwards; /* 애니메이션이 끝나는 부분에서 멈춤  */
+            animation-iteration-count: infinite; /* 계속 반복  */
+            animation-direction: alternate; /* 갔다가 다시 복원  */
+            animation-delay: 1s; /* 맨처음 시작할 때 1초를 지나서 시작  */
+        }
+
+        @keyframes boxani{
+            0%{left: 0;width: 100px;height: 100px;background: #000;top: 0;}
+            100%{left: 500px;width: 200px;height: 200px;background: blue;top: 50px;}
+            /* 100%{left: 0px;} */
+            /* from = 0%, to = 100%  */
+        }
+
+
+        .mouse{
+            width: 30px;height: 40px;background: skyblue;
+            border-radius: 15px;position: absolute;
+            cursor: pointer;
+            bottom: 40px;left: 50%;transform: translateX(-50%);
+            
+
+            animation-name:mouseAni;
+            animation-duration: 1s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: alternate;
+        }
+        @keyframes mouseAni{
+            from{bottom: 40px;}
+            /* bottom 초기값이 40이기때문에 from 40부터 시작  */
+            to{bottom: 60px;}
+        }
+        .mouse:after{
+            content:"";display: block;width: 15px;height: 15px;
+            border-radius: 50%;background: #fff;
+            position: absolute;left: 50%;transform: translateX(-50%);
+            top: 4px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <div class="mouse"></div>
+</body>
+</html>
