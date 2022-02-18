@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{width: 500px;display: flex;flex-wrap: wrap;}
+        .box .box1{
+            width: 100px;height: 100px;
+            /* background: pink; */
+            display: flex;justify-content: center;align-items: center;
+        }
+        .box div:nth-child(2n+1){background: pink;}
+    </style>
+</head>
+<body>
+    <button onclick="add()">추가</button>
+    <button onclick="remove()">전체삭제</button>
+    <div class="box"></div>
+    <script>
+        let i = 1;
+        const boxElem = document.getElementsByClassName("box")[0];
+
+        function add(){
+            console.log("추가");
+            boxElem.innerHTML += `<div class="box1">${i++}</div>` 
+            // boxElem.innerHTML += "<div class='box1'>" + i++ + "</div>";
+            // 문자일 때만 + 적용 // i++ = i를 1씩 증가시킴 (숫자 증가)
+
+            // boxElem.innerHTML = boxElem.innerHTML + "<div class='box1'>1</div>"
+            
+        }
+        function remove(){
+            boxElem.innerHTML = "";
+            i = 1; // 전체 내용 삭제 후 초기화 (i가 누적되서 나오기 때문)
+        }
+    </script>
+</body>
+</html>
