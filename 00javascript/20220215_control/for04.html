@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = 0;
+        for(var i=1;i<=20;i++){// i++ -> i=i+1, i+=20 -> i=i+20
+            // document.write(i);
+            str += i; // str = str + i; / 1~20까지의 합
+        }
+        document.write(str+"<br>");
+
+
+        var num = 0;
+        for(var j=1;j<=10;j++){
+            document.write(j);
+
+            if(j != 10){ // ! = 아니다. / j는 10과 같지않다.
+                document.write(" + ");
+            }
+            num += j; // num = num + j
+        }
+
+        document.write(" = 1에서 10까지의 합 : " + num + "<br>");
+
+
+
+        // while문 
+        var x = 1; // 초기값
+        var sum = 0;
+        while(x<=10){
+            // document.write(x);
+            sum += x; // sum = "" -> 문자로 인식, 문자 데이터로 저장 / 
+                     //  sum = 0 -> 숫자, 숫자 데이터로 인식, 
+            x++;
+        }
+        
+        document.write(sum);
+    </script>
+</body>
+</html>
