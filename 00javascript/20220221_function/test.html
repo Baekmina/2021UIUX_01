@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>합은 <span class="hap" id="hap">0</span></div>
+    <script>
+        // 1. for문으로 1~10까지의 합을 구하기.
+        // 2. 합 구하는 function로 제작, 인자넣어서 변수의 값으로 합을 구함.
+        // 3. result에 값을 return(치환)
+        // 4. result 값을 class = "hap"에 html로 삽입
+
+        var result;
+        function add(n){
+            var sum = 0;
+            for(var i=1;i<=10;i++){
+                sum += i;
+            }
+            // document.write(sum);
+            return sum;
+        }
+        // result add(10);
+        document.getElementsByClassName("hap")[0].innerHTML = result;
+    </script>
+</body>
+</html>

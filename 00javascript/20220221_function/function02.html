@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div>1합은 <span class="hap" id class="hap1">0</span></div> <!-- [0] -->
+        <div>2합은 <span class="hap" id class="hap">0</span></div> <!-- [1] -->
+        <div>3합은 <span class="hap" id class="hap2">0</span></div> <!-- [2] -->
+        <!-- id값은 똑같이 적용할 수 없음. 다르게 써야함. -->
+        
+    <script>
+
+        // 1. for문으로 1~10까지의 합을 구하기.
+        // 2. 합 구하는 function로 제작, 인자넣어서 변수의 값으로 합을 구함.
+        // 3. result에 값을 return(치환)
+        // 4. result 값을 class = "hap"에 html로 삽입
+
+
+        var result;
+        function add(n){
+            var sum = 0; //변수 초기화
+            for(var i=1;i<=10;i++){
+                // 이 안에 var sum = 0; 라고 넣으면 계속 sum값이 초기화되기 때문에 바깥에 넣어줘야함. 총 값이 10이 떠버림.
+                sum += i;
+            }
+            // document.write(sum)
+            return sum;
+        }
+        result = add(10);
+        // document.write(result);
+        // document.getElementById("hap").innerHTML = result;
+        // document.getElementsByClassName("hap")[1].innerHTML = result; // 0부터 시작함
+        document.querySelector("div .hap").innerHTML = result; // html에서 선택자 잡는 것처럼 해줘야함.
+        // querySelector = 첫번째만 해당
+        document.querySelectorAll(".hap")[2].innerHTML = result; // querySelectorAll = 본인이 순서 선택
+        document.querySelectorAll("div")[1].style.background = "skyblue"
+    </script>
+</body>
+</html>
