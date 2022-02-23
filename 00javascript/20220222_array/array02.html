@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var city = ["seoul","busan","inchon","daegu","daejeon"];
+        var cLink = ["www.naver.com","www.daum.net","www.korea.com","www.dbcut.com","www.nate.com"]
+        // document.write(city[0]); //seoul 값만 가지고 올 때
+        // document.write(city[1]); //busan 값만 가지고 올 때
+        // document.write(city[2]); //inchon 값만 가지고 올 때
+        // -> 너무 많은 데이터에 적용하기엔 불편함.
+
+        var cnt = city.length; // 데이터를 자동으로 
+
+        document.write("<ul>");
+        for(var i=0;i<cnt;i++){
+            document.write("<li>")
+            // document.write("<a href='http://"+ cLink[i] + "'>" + city[i] + "</a>");
+            document.write(`<a href="http://${cLink[i]}">${city[i]}</a>`)
+            document.write("</li>")
+            // 이 안에 ul태그가 들어가면 X
+        }
+        document.write("</ul>");
+
+    </script>
+</body>
+</html>
