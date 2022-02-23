@@ -1,0 +1,16 @@
+@charset 'utf-8';
+
+.submenu{display: none;}
+
+.gnb{width: 1000px;margin: 0 auto;background: skyblue;position: relative;z-index: 99999;}
+.gnb>.gnb_menu>li{float: left;width: calc( 100% / 5 );height: 50px;} /* height값이 중요 */
+.gnb>.gnb_menu>li>a{display: block;line-height: 50px;text-align: center;}
+.gnb>.gnb_menu>li:hover .submenu{display: block;background: pink;}
+/* 한 메뉴에 해당하는 submenu가 한개만 뜨는 것*/
+/* .gnb>ul:hover .submenu{display: block;background: pink;} */
+/* menu들의 submenu가 한꺼번에 전부 뜨는 것 */
+.submenu li a{display: block;line-height: 40px;text-align: center;}
+
+
+.visual{height: 300px;background: burlywood;}
+.visual img{width: 100%;}
