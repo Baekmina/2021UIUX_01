@@ -7,9 +7,37 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="text" class="inp">
+    <button onclick="add()">클릭</button>
+    <button onclick="del()">삭제</button>
+    <button onclick="sor()">정렬</button>
+    <div class="box"></div>
     <script>
         var city = ["서울","부산","대전"]
-        document.write(city.join("-"));
+        document.querySelector(".box").innerHTML = city;
+
+        
+        function add(){
+            var view = document.querySelector(".inp").value;
+
+            if(view == ""){ // view가 빈공간이면
+                return false; // 실행하지 않고 빠져나감.
+            }else{ // view가 빈공간이 아니면
+                city.push(view); // push : 추가해주는 것
+                document.querySelector(".box").innerHTML = city;
+                document.querySelector(".inp").value = ""; // data를 적었을 때 칸 안에서 data 없애기.
+            }
+        }
+
+        function del(){
+            city.pop(); // pop : 뒤에서부터 삭제하는 것
+            document.querySelector(".box").innerHTML = city;
+        }
+
+        function sor(){
+            city.sort(); // sort : 글자를 (자음 순) 순서대로 정렬해주는 것
+            document.querySelector(".box").innerHTML = city;
+        }
     </script>
 </body>
 </html>
