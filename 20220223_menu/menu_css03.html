@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../js/jquery-3.1.1.min.js"></script>
+
+    <style>
+        .box{
+            width: 100px;height: 100px;background: skyblue;
+            position: relative;left: 0;transition: 2s;
+        }
+        .box.move{left: 100px;}
+
+        .toggle{
+            width: 40px;height: 40px;background: pink;
+            display: flex;justify-content: center;align-items: center;
+            cursor: pointer;
+        }
+        .toggle div{
+            width: 24px;height: 3px;background: #000;
+            border-radius: 5px;position: absolute;
+            transition: 0.3s;
+        }
+        .toggle .bar1{transform: translateY(-10px);}
+        .toggle .bar3{transform: translateY(10px);}
+
+        .toggle.active .bar1{transform: translateY(0) rotate(45deg);}
+        .toggle.active .bar2{opacity: 0;}
+        .toggle.active .bar3{transform: translateY(0) rotate(-45deg);}
+
+        .visual{width: 300px;height: 100px;background: skyblue;}
+
+    </style>
+</head>
+<body>
+    <div class="box" title="안녕하세요">
+        
+    </div>
+    <button onclick="move()">이동</button>
+    <button onclick="init()">복귀</button>
+
+    <script>
+        let boxElem = document.querySelector(".box"); //function move와 init에서
+        //  같이 사용할 수 없으니 바깥으로 빼서 전역함수로 만듦.
+
+        function move(){
+
+            // console.log(boxElem.classList.value); // console.log => 확인용
+
+            // boxElem.classList.add("move"); // div class 이름에 move를 더해준 것.
+
+            // 자바스크립트로 할 때
+            $(".box").addClass("move");
+            console.log( $(".box").attr("class") );
+        }
+
+        function init(){
+            // boxElem.classList.remove("move");
+
+            // 자바스크립트로 할 때
+            $(".box").removeClass("move");
+        }
+    </script>
+
+
+
+    <!-- 햄버거 버튼 만들기 -->
+
+    <div class="toggle">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <div class="visual"></div>
+    <script>
+        let check = 0;
+        $(".toggle").click(function(){
+            if(check == 0){ // check가 0일 때,
+                $(".toggle").addClass("active"); // .toggle에 active 클래스를 추가
+                $(".box").addClass("move");
+                $(".visual").show();
+                check = 1;
+            }else{
+                $(".toggle").removeClass("active");
+                $(".box").removeClass("move");
+                $(".visual").hide();
+                check = 0; // check를 0으로 초기화 시켜야 모양이 변화 가능함.
+            }
+
+            console.log(check)
+        });
+    </script>
+</body>
+</html>
