@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{display: flex;background: gray;flex-wrap: wrap;}
+        .container .item1{background: pink;}
+        .container .item2{background: skyblue;}
+        .container .item3{background: gold;}
+        .container .item4{background: greenyellow;}
+        .container div{
+            /* flex-grow: 1; */
+            /* flex:1 1 auto; */
+            /* flex-grow:1; */
+            /* flex-shrink:1; */
+            flex-grow:1;
+            flex-basis:30%; 
+            /* flex-basis:30% = 빈 공간이 옆으로 잡히기 때문에 flex-grow값을 주어야 함 */
+            /* -> width값이 적용되지 않음. */
+            /* width: 50%; */
+            /* flex-basis:auto면 width:50%값이 적용됨. */
+        } 
+        /* flex-grow 글자의 길이가 같으면 나머지 길이도 똑같이 배분됨  */
+
+        @media screen and (max-width:600px){
+            .container1 div{flex-basis: 50%;}
+        }
+
+        .container1{display: flex;}
+        .container1 .left{width: 200px;background: orange;flex-shrink: 0;}
+        .container1 .content{flex: 1;background: powderblue;display: flex;flex-wrap: wrap;}
+        .content div{width: 200px;height: 200px;flex: 1 1 30%;}
+        .content div:nth-child(2n){background:beige;}
+
+        @media screen and (max-width:600px){
+            .container{flex-direction: column;}
+            .container1 .lft{width: 100%;}
+            .container1 div{flex:1 1 auto;}
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="container">
+        <div class="item1">aaa</div>
+        <div class="item2">bbb</div>
+        <div class="item3">ccc</div>
+        <div class="item4">ddd</div>
+        <div class="item5">eee</div>
+    </div> -->
+
+    <div class="container1">
+        <div class="left">
+            메뉴
+        </div>
+        <div class="content">
+            <div class="item" style="background-image: url(../image/img1.jpg);"></div>
+            <div class="item" style="background-image: url(../image/img2.jpg);"></div>
+            <div class="item" style="background-image: url(../image/img3.jpg);"></div>
+            <div class="item" style="background-image: url(../image/img4.jpg);"></div>
+            <div class="item" style="background-image: url(../image/img5.jpg);"></div>
+            <div class="item" style="background-image: url(../image/img6.jpg);"></div>
+        </div>
+    </div>
+</body>
+</html>
