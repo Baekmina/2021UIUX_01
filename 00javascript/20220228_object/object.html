@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <a href="http://~~~" title=""></a> object에 대한 재원 -->
+    <div class="box">1</div>
+
+    <script>
+        var array = [50,100]; // 호출할 때 : array[0]
+        var obj = {kor:50,eng:100}; // 호출할때 : obj['kor'] obj.eng
+
+        // 속성 attribute
+        var car = {
+            name:"sonata",
+            color:"red",
+            speed:100,
+            door:4,
+            start:function(){
+                return this.speed + 200;
+            }
+        };
+
+        document.write(car.name + car.color);
+        document.querySelector(".box").style.background = car.color;
+        document.querySelector(".box").innerHTML = car.start();
+
+        var carArray = new Array(10,20,30);
+        carArray.push(50);
+        document.write(carArray);
+
+
+
+        // 생성자 함수
+        function char(name,age,key){
+            this.name = name;
+            this.age = age;
+            this.key = key;
+            this.start = function(a){
+                return this.age + a;
+            }
+        };
+
+        var baek = new char("백민아",29,162);
+        var park = new char("박서준",25,180);
+
+        document.write(park.start(10)); // 위에 function(a){return this.age + a;};에서 a의 값.
+    </script>
+</body>
+</html>
