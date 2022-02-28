@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <style>
+        .submenu{display: none;}
+        .gnb{width: 1000px;margin: 0 auto;position: relative;}
+        .gnb>ul{display: flex;}
+        .gnb>ul>li{flex:1;transition: 0.3s;} /* flex : 1 - 자동배분 */
+        .gnb>ul>li:nth-child(2n){background: pink;}
+        /* .gnb>ul>li:hover{flex:1.2;} */
+        .gnb>ul>li>a{height: 40px;display: flex;justify-content: center;align-items: center;}
+        
+        /* .gnb>ul>li.gap{width: 5px;_background: skyblue;flex-grow: initial;display: flex;align-items: center;} */
+
+        /* .gnb>ul>li .submenu{display: block;} */
+        .gnb>ul>li .submenu a{padding-right: 15px;height: 40px;display: flex;align-items: center;}
+        .gnb>ul>li:hover .submenu{display: flex;background: skyblue;position: absolute;}
+        .gnb .submenu li{height: 40px;}
+        .gnb>ul>li:nth-child(1) .submenu{left: 0;}
+        .gnb>ul>li:nth-child(2) .submenu{left: calc(50% - 290px);}
+        .gnb>ul>li:nth-child(3) .submenu{left: calc(50% - 50px);}
+        .gnb>ul>li:nth-child(4) .submenu{left: calc(50% + 168px);}
+    </style>
+    
+</head>
+<body>
+    <nav class="gnb">
+        <ul>
+            <li>
+                <a href="#">MENU01</a>
+                <ul class="submenu">
+                    <li><a href="#">sub01_01</a></li>
+                    <li><a href="#">sub01_02</a></li>
+                    <li><a href="#">sub01_03</a></li>
+                    <li><a href="#">sub01_04</a></li>
+                </ul>
+            </li>
+            <!-- <li class="gap">/</li> -->
+            <li>
+                <a href="#">MENU02</a>
+                <ul class="submenu">
+                    <li><a href="#">sub02_01</a></li>
+                    <li><a href="#">sub02_02</a></li>
+                    <li><a href="#">sub02_03</a></li>
+                    <li><a href="#">sub02_04</a></li>
+                </ul>
+            </li>
+            <!-- <li class="gap">/</li> -->
+            <li>
+                <a href="#">MENU03</a>
+                <ul class="submenu">
+                    <li><a href="#">sub03_01</a></li>
+                    <li><a href="#">sub03_02</a></li>
+                    <li><a href="#">sub03_03</a></li>
+                    <li><a href="#">sub03_04</a></li>
+                </ul>
+            </li>
+            <!-- <li class="gap">/</li> -->
+            <li>
+                <a href="#">MENU04</a>
+                <ul class="submenu">
+                    <li><a href="#">sub04_01</a></li>
+                    <li><a href="#">sub04_02</a></li>
+                    <li><a href="#">sub04_03</a></li>
+                    <li><a href="#">sub04_04</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
