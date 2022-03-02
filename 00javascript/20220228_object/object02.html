@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "min";
+        var arr = [10,20,30,40];
+        // arr.join() arr.push()
+
+
+        // arr.forEach(function(item,index){}); // data를 가져오는 목적.
+        // arr.forEach(function(value,index){});
+        arr.forEach(function(v,i){ //forEach는 배열에서만 사용함
+            cosole.log(v)
+        });
+        
+        for(var i=0;i<arr.length;i++){ //for문은 배열이 아닌 곳에서도 사용함.
+            console.log(arr[i])
+        }
+    
+
+        var obj = {kor:20,eng:30,math:40,move:function(){}};
+
+        var obj1 = [
+            {kor:30,eng:30,math:40},
+            {kor:50,eng:40,math:30}, //obj1[1].math = 30
+            {kor:50,eng:40,math:30}, 
+            {kor:50,eng:40,math:30}, 
+        ];
+
+        obj1.forEach(function(v,i){
+            console.log(i + ". 수학점수 " + obj1[i].math)
+        });
+
+        // obj.kor obj.eng obg.move() 
+        console.log(arr.length); 
+
+        //변수지정
+        //함수만들기
+        //실행만들기(=이벤트실행)
+    </script>
+</body>
+</html>
