@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+
+    <style>
+        .tab{width: 500px;display: flex;}
+        .tab li{
+            padding: 10px 20px;border: 1px solid #000;
+            cursor: pointer;border-bottom: 0 none;
+        }
+        .tab li.active{background: #333;color: white;}
+        .tab li:hover{background: #333;color: white;}
+
+        .content{width: 500px;padding: 16px;border: 1px solid #000;}
+        .content .tcon2,.tcon3,.tcon4,.tcon5{display: none;}
+
+    </style>
+</head>
+<body>
+    <ul class="tab">
+        <li class="active">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+        <li>tab4</li>
+        <li>tab5</li>
+    </ul>
+    <div class="content">
+        <div class="tcon1">
+            0 Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatibus porro nostrum voluptatum assumenda quis nesciunt fugiat maiores, hic ad dignissimos debitis in perferendis quibusdam illum. Ducimus ex officia ipsum.
+        </div>
+        <div class="tcon2">
+            1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatibus porro nostrum voluptatum assumenda quis nesciunt fugiat maiores, hic ad dignissimos debitis in perferendis quibusdam illum. Ducimus ex officia ipsum.
+        </div>
+        <div class="tcon3">
+            2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatibus porro nostrum voluptatum assumenda quis nesciunt fugiat maiores, hic ad dignissimos debitis in perferendis quibusdam illum. Ducimus ex officia ipsum.
+        </div>
+        <div class="tcon4">
+            3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatibus porro nostrum voluptatum assumenda quis nesciunt fugiat maiores, hic ad dignissimos debitis in perferendis quibusdam illum. Ducimus ex officia ipsum.
+        </div>
+        <div class="tcon5">
+            4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatibus porro nostrum voluptatum assumenda quis nesciunt fugiat maiores, hic ad dignissimos debitis in perferendis quibusdam illum. Ducimus ex officia ipsum.
+        </div>
+    </div>
+
+    <script>
+        $(".tab li").click(function(){
+            $(".tab li").removeClass("active");
+            $(this).addClass("active");
+
+            $(".content div").hide();
+            $(".content div").eq($(this).index()).show();
+        });
+    </script>
+</body>
+</html>
