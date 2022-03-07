@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <a href="#" onclick="location.href='http://www.naver.com'">
+            <li>
+                <ul>
+                    <li onclick="myclick(event)">링크1-1</li>
+                    <li>링크1-1</li>
+                    <li>링크1-1</li>
+                    <li>링크1-1</li>
+                </ul>
+            </li>
+        </a>
+        <li>링크2</li>
+        <li>링크3</li>
+        <li>링크4</li>
+    </ul>
+
+    <script>
+        function myclick(e){
+            console.log(e.target.tagName + "/" + this.tagName)
+            e.preventDefault();
+            e.stopPropagation();
+            location.href="http://www.daum.net";
+        }
+    </script>
+
+
+    <form id="form">
+        <div>
+            div
+            <p onclick="event.stopPropagation()">p</p>
+            <!-- stopPropagation : 네이버로 갈 수 있지만 그걸 가지 못하게 막는 역할. -->
+        </div>
+    </form>
+    <script>
+        const fElem = document.querySelector("#form");
+        form.onclick = function(e){
+            console.log(e.target);
+            e.target.style.backgroundColor = "skyblue"
+
+            alert(e.target.tagName)
+        }
+    </script>
+</body>
+</html>
