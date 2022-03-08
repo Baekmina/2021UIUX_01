@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        body{height: 400vh;}
+        .bg-primary{background: skyblue;}
+        .container{
+            width: 1000px;margin: 0 auto;
+            display: flex;align-items: center;
+        }
+        .container h1{font-size: 20px;align-self: center;}
+        /* alia-self:stretch = aic를 먼저 사용했더라도 자식요소보다 우선순위가 더 높다는 뜻 */
+        /* alia-self:flex-start = 위쪽, flex-end = 아래쪽 */
+        .container .gnb{margin-left: auto;} /* space-between이랑 같은 효과 */
+        .container .gnb>ul{display: flex;width: 600px;}
+        .container .gnb>ul>li{flex: 1;} /* flex = 자식요소에 넣어주는 것 */
+        .container .gnb>ul>li>a{
+            display: block;line-height: 50px;text-align: center;
+        }
+        .container .gnb>ul>li:hover{background: gray;}
+        
+        /* toggle  */
+
+        .toggle{
+            width: 40px;height: 40px;background: pink;
+            display: flex;justify-content: center;align-items: center;
+            cursor: pointer;
+        }
+        .toggle div{
+            width: 24px;height: 3px;background: #000;
+            border-radius: 5px;position: absolute;
+            transition: 0.1s;
+        }
+        .toggle .bar1{transform: translateY(-10px);}
+        .toggle .bar3{transform: translateY(10px);}
+
+        .toggle.active .bar1{transform: translateY(0) rotate(45deg);}
+        .toggle.active .bar2{opacity: 0;}
+        .toggle.active .bar3{transform: translateY(0) rotate(-45deg);}
+
+        .toggle{display: none;}
+
+
+
+
+        @media screen and (max-width:768px){ /* 768이 최대값일 때  */
+            .container{width: 100%;height: 40px;padding: 0 16px;}
+            .toggle{display: flex;margin-left: auto;position: fixed;right: 16px;top: 0;}
+
+            .container .gnb{
+                position: fixed; 
+                /* gnb의 부모는 body이기 때문에 poa를 잡아줌.
+                나중에는 fixed를 해줌.(스크롤을 내려도 고정시키기 위해서) */
+                width: 100%;height: 100%;
+                background: pink;
+                top: 0;
+                left: -100%; /* 보통은 left로 들어가있는 경우가 많음. */
+                display: flex;justify-content: center;align-items: center;
+                transition: 0.3s;
+            }
+            .container .gnb>ul{display: block;width: 200px;}
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container bg-primary">
+        <h1><a href="#">logo</a></h1>
+        <nav class="gnb">
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">company</a></li>
+                <li><a href="#">product</a></li>
+                <li><a href="#">community</a></li>
+            </ul>
+        </nav>
+        <div class="toggle">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+
+    <script>
+        let chk = true;
+        $(".toggle").click(function(){
+            
+            if(chk == true){
+                $(this).addClass("active");
+                console.log( $(".gnb").css("left") ) // getter
+                $(".gnb").css("left",0);
+                // $(".gnb").css({left:0,top:30,"background-color":"orange"})
+                chk = false;
+            }else{
+                $(this).removeClass("active");
+                $(".gnb").css("left","-100%")
+                chk = true;
+            }
+        });
+
+        $(window).resize(function(){ // 메뉴가 켜진 상태에서 크기를 늘렸다 줄여도 메뉴가 없어짐.
+            $(".toggle").removeClass("active");
+            $(".gnb").removeAttr("style");
+        });
+    </script>
+</body>
+</html>

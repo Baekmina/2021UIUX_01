@@ -6,68 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/reset.css">
-
     <style>
-        .toggle{
-            width: 40px;height: 40px;background: pink;
-            display: flex;justify-content: center;align-items: center;
-            cursor: pointer;
-            position: relative;z-index: 1;
-        }
-        .toggle div{
-            width: 24px;height: 3px;background: #000;
-            border-radius: 5px;position: absolute;
-            transition: 0.3s;
-        }
-        .toggle .bar1{transform: translateY(-10px);}
-        .toggle .bar3{transform: translateY(10px);}
 
-        .toggle.active .bar1{transform: translateY(0) rotate(45deg);}
-        .toggle.active .bar2{opacity: 0;}
-        .toggle.active .bar3{transform: translateY(0) rotate(-45deg);}
+        body{height: 400vh;}
 
-        .menu{
-            width: 300px;height: 100%;background: coral;
-            display: flex;justify-content: center;align-items: center;
-            font-size: 2em;
-            position: absolute;top: 0;left: -100%;
-            transition: 0.3s;
+        .container{
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
         }
+
+        .gnbWrap{position: absolute;width: 100%;}
+        .gnbWrap.fixed{position: fixed;width: 100%;background: white;}
+        .gnbWrap.fixed a{color:black;height: 40px;}
+
+        .gnb{width: 1000px;margin: 0 auto;}
+        .gnb ul{display: flex;justify-content: space-between;}
+        .gnb ul li{_background: gold;width: 20%;}
+        .gnb ul li a{
+            height: 80px;
+            display: flex;justify-content: center;align-items: center;
+            color:white;font-weight: bold;
+        }
+
+        /* common */
+        .con1st{background-image: url(../image/pc01.jpg);}
+        .con2st{background-image: url(../image/pc02.jpg);}
+        .con3st{background-image: url(../image/pc03.jpg);}
+        .gray{background: #ccc;}
     </style>
 </head>
 <body>
-    <div class="toggle">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
+    <div class="gnbWrap fixed">
+        <nav class="gnb">
+            <ul>
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+                <li><a href="#">menu5</a></li>
+            </ul>
+        </nav>
     </div>
-    <div class="menu">
-        <ul>
-            <li>menu1</li>
-            <li>menu2</li>
-            <li>menu3</li>
-            <li>menu4</li>
-            <li>menu5</li>
-        </ul>
-    </div>
+    <div class="container con1st"></div>
+    <div class="container con2st"></div>
+    <div class="container gray"></div>
+    <div class="container con3st"></div>
 
     <script>
-        const toElem = document.querySelector(".toggle");
-        const menuElem = document.querySelector(".menu");
+         //1. window, scroll이벤트 : window 객체 관련 정보 window.pageYOffset
+        //   window.addEventListner()
+        //2. window.pageYOffset이 300보다 크면 gngWrap을 add("fixed") class를 해주기.
+        //3. window.pageYOffset이 300보다 작으면 gngWrap을 remove("fixed") class를 해주기.
 
-        let chk = 0;
-
-        toElem.addEventListener("click",function(){
-            if(chk == 0){
-                toElem.classList.add("active");
-                menuElem.style.left = "0";
-                chk = 1;
+        window.addEventListener("scroll",function(){
+            const scrollY = window.pageYOffset;
+            if( scrollY > 300 ){
+                document.querySelector(".gnbWrap").classList.add("fixed")
             }else{
-                toElem.classList.remove("active");
-                menuElem.style.left = "-100%";
-                chk = 0;
+                document.querySelector(".gnbWrap").classList.remove("fixed")
             }
         });
+        
     </script>
 </body>
 </html>

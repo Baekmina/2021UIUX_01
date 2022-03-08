@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
     <style>
         body{
             /* height: 400vh; */
@@ -24,9 +25,9 @@
         .gnbWrap.fixed{position: fixed;width: 100%;background: white;}
         .gnbWrap.fixed a{color:black;height: 40px;}
 
-        .gnb{width: 1000px;margin: 0 auto;}
+        .gnb{max-width: 1000px;margin: 0 auto;}
         .gnb ul{display: flex;justify-content: space-between;}
-        .gnb ul li{_height:40px;_background: skyblue;width: 20%;}
+        .gnb ul li{_background: skyblue;width: 20%;}
         .gnb ul li a{
             height: 80px;display: flex;justify-content: center;align-items: center;
             color:white;font-weight: bold;
@@ -41,6 +42,7 @@
         .gold{background: rgb(92,81,22);}
         
         .container.flex{display: flex;justify-content: center;align-items: center;font-size: 6vw;color:white}
+        .box{position: fixed;right: 0;bottom: 0;width: 150px;}
     </style>
 </head>
 <body>
@@ -62,6 +64,10 @@
     <section class="container skyblue"></section>
     <section class="container con3st"></section>
 
+    <div class="box">
+        현재 스크롤 값 <span id="scrollValue"></span>
+    </div>
+
 
     <script>
         //1. window, scroll이벤트 : window 객체 관련 정보 window.pageYOffset
@@ -69,16 +75,16 @@
         //2. window.pageYOffset이 300보다 크면 gngWrap을 add("fixed") class를 해주기.
         //3. window.pageYOffset이 300보다 작으면 gngWrap을 remove("fixed") class를 해주기.
 
-        window.addEventListener("scroll",function(){
-            // console.log("스크롤실행")
-            let scrollY = window.pageYOffset; // 값을 갖고오는 것이라 ()가 없음.
-            console.log(scrollY)
+        // $(window).on("scroll",function(){})
+        $(window).scroll(function(){
+            let scrollY = window.pageYOffset;
+
+            $("#scrollValue").html(scrollY);
+
             if(scrollY > 300){
-                document.querySelector(".gnbWrap").classList.add("fixed");
-                // document.querySelector(".txt1").style.position = "fixed" //txt1을 고정시켜주는 것.
+                $(".gnbWrap").addClass("fixed");
             }else{
-                document.querySelector(".gnbWrap").classList.remove("fixed");
-                // document.querySelector(".txt1").style.position = "initial"
+                $(".gnbWrap").removeClass("fixed");
             }
         })
     </script>
