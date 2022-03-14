@@ -96,6 +96,46 @@
 }
 .contents .txtCard h3{font-size: 2em;}
 
+.contents .news{position: relative;}
+.contents .news .item ul{display: flex;}
+.contents .news .item ul>li{width: 50%;background: white;}
+.contents .news .item ul>li:nth-child(1){
+    padding-top: 65px;padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+    
+}
+.contents .news .item ul>li:nth-child(1):after{
+    content:"";display: block;
+    /* width: 30px;height: 30px;background: #f00; */
+    border-width: 20px;
+    border-color: transparent transparent transparent white;
+    /* 시계방향으로 돌아감 */
+    border-style: solid;
+    position: absolute;
+    right: -40px;top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.contents .news .bx-wrapper {
+    -moz-box-shadow: 0 0 0px #ccc;
+    -webkit-box-shadow: 0 0 0px #ccc;
+    box-shadow: 0 0 0px #ccc;
+    border: 0 none;
+    margin-bottom: 0;
+}
+.contents .news .title{
+    position: absolute;top: 30px;left: 30px;
+}
+.contents .news .btnWrap{
+    position: absolute;
+    display: flex;
+    bottom: 30px;left: 200px;
+    border: 1px solid #ccc;
+}
+.contents .news .btnWrap .left{border-right: 1px solid #ccc;}
+
 
 
 /* common  */
