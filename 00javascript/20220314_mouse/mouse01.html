@@ -75,5 +75,38 @@
         }
     </script>
 
+    <style>
+        .box{
+            width: 10px;height: 10px;background: red;
+            position: absolute;transition: 0.1s;
+        }
+        .box1{
+            width: 10px;height: 10px;background: blue;
+            position: absolute;transition: 0.2s;
+        }
+    </style>
+    <img src="../image/testimg.jpg" alt="" onmousemove="where(event)"><br>
+    <div class="doc"></div>
+    <div class="box"></div>
+    <div class="box1"></div>
+
+    <script>
+        function where(e){
+            console.log("마우스 x:" + e.x + ", y:" + e.y)
+            document.querySelector(".box").style.left = 20 + e.x + "px";
+            document.querySelector(".box").style.top = 20 + e.y + "px";
+            document.querySelector(".box1").style.left = 20 + e.x + "px";
+            document.querySelector(".box1").style.top = 20 + e.y + "px";
+
+            // const docElem = document.getElementsByClassName("doc")[0];
+            const docElem = document.querySelector(".doc");
+
+            let txt = "";
+            txt += "마우스 x:" + e.x + ", y:" + e.y + "<br>";
+            txt += "이미지 위 마우스 offset x:" + e.offsetX + ", y:" + e.offsetY;
+
+            docElem.innerHTML = txt;
+        }
+    </script>
 </body>
 </html>
