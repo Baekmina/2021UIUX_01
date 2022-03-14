@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        html,body{height: 100%;}
+    </style>
 </head>
 <body>
     <form>
@@ -24,14 +28,50 @@
         }
     </script>
 
-    <div>마우스 관련 <span onmousedown="down(this)">이벤트</span> 가 발생합니다.</div>
+    <div>마우스 관련 <span 
+        onmousedown="down(this)" 
+        onmouseup="up(this)"
+        onmouseover="over(this)"
+        onmouseout="out(this)"
+        >이벤트</span> 가 발생합니다.</div>
     <!-- this = span 태그 자기 자신 -->
-    <span onmousedown="down(this)">test</span>
-    
+
+
     <script>
         function down(obj){
             // document.getElementsByTagName("span")[0].style.fontStyle = "italic";
             obj.style.fontStyle = "italic";
+        }
+        function up(obj){
+            obj.style.fontStyle = "normal";
+        }
+        function over(obj){
+            obj.style.borderColor = "violet"
+        }
+        function out(obj){
+            obj.style.borderColor = "lightgray"
+        }
+        // document.getElementsByTagName("body")[0].onwheel = function(e){
+        //     console.log(e.wheelDelta);
+        // }
+
+        let width = 0;
+
+        document.body.onwheel = function(e){
+            // console.log("wheel : " + e.wheelDelta);
+            if(e.wheelDelta < 0){ // 밑으로 내리면 음수, 위로 올리면 양수
+                width--;
+                if(width < 0){width = 0;}
+            }else{
+                width++;
+
+            }
+            console.log("border:" + width);
+
+            const spanElem = document.getElementsByTagName("span")[0];
+
+            spanElem.style.borderStyle = "solid";
+            spanElem.style.borderWidth = width + "px";
         }
     </script>
 
