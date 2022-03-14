@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="exp">식</label><input type="text" id="exp" value=""><br>
+        <label for="result">값</label><input type="text" id="result"><br>
+        <input type="button" value="결과" onclick="cal()">
+        
+    </form>
+
+    <script>
+        function cal(){
+            const expElem = document.getElementById("exp");
+            const resultElem = document.getElementById("result");
+
+            resultElem.value = eval(expElem.value);
+            // eval : 값을 구해주는 것.
+        }
+    </script>
+
+    <div>마우스 관련 <span onmousedown="down(this)">이벤트</span> 가 발생합니다.</div>
+    <!-- this = span 태그 자기 자신 -->
+    <span onmousedown="down(this)">test</span>
+    
+    <script>
+        function down(obj){
+            // document.getElementsByTagName("span")[0].style.fontStyle = "italic";
+            obj.style.fontStyle = "italic";
+        }
+    </script>
+
+</body>
+</html>
