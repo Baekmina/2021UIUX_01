@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{width: 100px;height: 100px;background: red;}
+        .imgbox{background: skyblue;}
+    </style>
+
+    <script>
+        
+        // window.onload = function(){
+        //     document.querySelector(".box").style.width = "200px"
+        // }
+
+        function box(){
+            document.querySelector(".box").style.width = "200px"
+        }
+
+        window.onload = box;
+        // obj.on이벤트 = 함수이름 (소괄호 쓰지 않음)
+        // obj.on이벤트 = function(){}
+        // obj.on이벤트 = ()=>{}
+        // obj.addEventListerner("이벤트",function(){})
+        // obj.addEventListerner("이벤트",()=>{})
+        // obj.addEventListerner("이벤트",함수이름)
+    </script>
+
+</head>
+<body>
+    <div class="box"></div>
+    <img src="../image/banana.png" alt="">
+
+    <div class="imgbox"></div>
+
+    <script>
+        const imgElem = document.querySelector("img");
+        const ibElem = document.querySelector(".imgbox");
+
+        //imgElem.src = "../image/apple.png"
+        imgElem.onload = function(){
+            console.log(imgElem.width);
+            ibElem.style.width = imgElem.width + "px";
+            ibElem.style.height = imgElem.height + "px";
+        }
+
+    </script>
+</body>
+</html>
