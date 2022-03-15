@@ -41,13 +41,48 @@
         const imgElem = document.querySelector("img");
         const ibElem = document.querySelector(".imgbox");
 
-        //imgElem.src = "../image/apple.png"
+        // imgElem.src = "../image/apple.png"
+
         imgElem.onload = function(){
             console.log(imgElem.width);
             ibElem.style.width = imgElem.width + "px";
             ibElem.style.height = imgElem.height + "px";
         }
 
+    </script>
+
+
+
+    <form>
+        <select id="sel" onchange="changeImage()">
+            <option value="../image/apple.png">사과</option>
+            <option value="../image/banana.png">바나나</option>
+            <option value="../image/apple.png">사과</option>
+            <option value="../image/banana.png">바나나</option>
+
+        </select><span class="size">이미지크기</span>
+    </form>
+
+    <img src="../image/apple.png" alt="" class="view">
+
+    <script>
+        const selElem = document.querySelector("#sel");
+        const viewElem = document.querySelector(".view");
+        const sizeElem = document.querySelector(".size");
+        
+        function changeImage(){
+            let index = selElem.selectedIndex;
+            console.log(index);
+
+            viewElem.onload = function(){ //onload를 안하면 첫번째 이미지크기는 구할수X
+                sizeElem.innerHTML = viewElem.width + "X" + viewElem.height;
+            }
+            
+            console.log(selElem.options[index].value);
+            viewElem.src = selElem.options[index].value;
+        }
+
+        changeImage();
     </script>
 </body>
 </html>
