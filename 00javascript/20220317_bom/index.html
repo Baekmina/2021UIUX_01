@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            position: fixed;left: 50%;top: 50%;
+            transform: translate(-50%,-50%);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.naver.com" target="_blank">네이버</a>
+    <!-- _self : 링크를 눌렀을 때 새 창이 아닌 자기 자신으로 열림. -->
+    <!-- _blank : 링크를 눌렀을 때 새 창으로 열어줌. -->
+    <img src="../image/testimg.jpg" alt="" onclick="winOpen()">
+    <img src="../image/testimg.jpg" alt="" onclick="divOpne()">
+
+    <div class="box">
+        <img src="../image/testimg.jpg" alt="" onclick="divClose()">
+    </div>
+
+    <div onclick="divClose()">닫기</div>
+
+    <script>
+        function winOpen(){
+            window.open("http://www.naver.com"); //window의 첫번째 인자값(네이버)을 실행
+        }
+        function divOpne(){
+            document.querySelector(".box").style.display = "block"
+        }
+        function divClose(){
+            document.querySelector(".box").style.display = "none"
+        }
+    </script>
+</body>
+</html>
