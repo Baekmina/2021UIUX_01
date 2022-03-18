@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <style>
         .box{
             width: 100px;height: 100px;background: red;
@@ -30,16 +31,54 @@
         }
         test();
 
-        let timerId; // 변수 이름은 자유롭게 설정
+        let min; // 변수 이름은 자유롭게 설정
         document.querySelector(".btnClick").onclick = function(){
             // setTimeout(test,1000);
-            timerId = setInterval(test,100); // 1초(1000)마다 증가함(계속), 양수로 올라감
+            min = setInterval(test,100); // 1초(1000)마다 증가함(계속), 양수로 올라감
             // test(); // 클릭할 때 마다 증가하는 것
         }
 
         document.querySelector(".btnStop").onclick = function(){
-            clearInterval(timerId)
+            clearInterval(min);
         }
+    </script>
+
+    <div class="time"></div>
+    <script>
+        // const date = new Date();
+        // document.querySelector(".time").innerHTML = date.toLocaleTimeString();
+        // toLocaleTimeString = 우리나라 언어로 현재 시간을 알려줌. 
+        
+        function time(){ // 함수로 묶어주기
+            const date = moment();
+            document.querySelector(".time").innerHTML = date.format("hh:mm:ss"); // 시,분,초
+            
+            // $(".time").html(date.format("hh:mm:ss")) // jquery
+
+        } // YYYY년 MM월 DD일 : 오늘 년도월일이 나옴.
+
+        setInterval(time,1000); // 1초 후에 실행
+        time(); // 1초당 체크
+    </script>
+
+
+    <!-- <div class="text">
+            안녕하세요 // enter값이 첫번째로 들어가서 빈공간으로 뜸.
+        </div> -->
+    <div class="text">안녕하세요</div>
+    <div class="sample"></div>
+
+    <script>
+        function rotate(){
+            const textElem = document.querySelector(".text");
+
+            let str = textElem.innerHTML;
+            let first = str.substr(0,1);
+            console.log(first)
+
+            document.querySelector(".sample").innerHTML = first; 
+        }
+        rotate();
     </script>
 </body>
 </html>
