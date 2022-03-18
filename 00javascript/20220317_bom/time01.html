@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;height: 100px;background: red;
+            position: relative;left: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <button class="btnClick">클릭</button>
+    <button class="btnStop">멈춤</button>
+
+    <div class="box"></div>
+
+    <script>
+        // setTimeout("alert('test')",1000);
+        // setTimeout(function(){alert('test')},1000);
+        
+        let num = 1;
+        function test(){
+            console.log("test" + num++);
+            document.querySelector(".box").style.left = num++ + "px";
+        }
+        test();
+
+        let timerId; // 변수 이름은 자유롭게 설정
+        document.querySelector(".btnClick").onclick = function(){
+            // setTimeout(test,1000);
+            timerId = setInterval(test,100); // 1초(1000)마다 증가함(계속), 양수로 올라감
+            // test(); // 클릭할 때 마다 증가하는 것
+        }
+
+        document.querySelector(".btnStop").onclick = function(){
+            clearInterval(timerId)
+        }
+    </script>
+</body>
+</html>
