@@ -63,22 +63,44 @@
 
 
     <!-- <div class="text">
-            안녕하세요 // enter값이 첫번째로 들어가서 빈공간으로 뜸.
+            안녕하세요 // innerHTML : enter값이 첫번째로 들어가서 빈공간으로 뜸.
         </div> -->
-    <div class="text">안녕하세요</div>
+        <!-- <div class="text">
+            안녕하세요. 만나서 반갑습니다.
+        </div> -->
+    <div class="text">안녕하세요. 만나서 반갑습니다.</div>
     <div class="sample"></div>
-
+    <button class="tChan">글자이동</button>
+    <button class="tStop">글자멈춤</button>
     <script>
+        const textElem = document.querySelector(".text");
+        let timeId;
+
         function rotate(){
-            const textElem = document.querySelector(".text");
 
             let str = textElem.innerHTML;
-            let first = str.substr(0,1);
+            let first = str.substr(0,1); // '안' 만 뜸.
+            let remains = str.substr(1,str.length-1); // '녕하세요' 만 뜸.
+            str = remains + first; // '녕하세요안'
             console.log(first)
 
-            document.querySelector(".sample").innerHTML = first; 
+            // document.querySelector(".sample").innerHTML = str; 
+            textElem.innerHTML = str; // 자기 자신한테 넣은 것. 
         }
-        rotate();
+        // rotate();
+
+        
+        document.querySelector(".tChan").onclick = function(){
+            // rotate();
+            timeId = setInterval(rotate,200); // 버튼 클릭하면 글씨가 옆으로 계속 이동.
+        }
+        setInterval(rotate,200); // 맨 처음에 시작할 때 움직이게 하기 위해
+                                // but - 글자 멈춤이 안됨. 
+
+
+        document.querySelector(".tStop").onclick = function(){
+            clearInterval(timeId);
+        }
     </script>
 </body>
 </html>
