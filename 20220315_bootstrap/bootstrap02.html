@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        html,body{height: 100%;}
+        .box{
+            /* display: flex;
+            flex-direction: column;  */
+            /* 축이 바뀜. 글자가 밑으로 내려감, row의 경우 글자가 오른쪽으로 감.*/
+            /* 반응형을 할 때는 flex-direction을 사용하는 것이 좋음. */
+            /* align-items: center;
+            justify-content: space-between; */
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="bg-primary">
+        <div class="container bg-dark text-white text-center">
+            <div class="row">
+                <div class="col-12">1</div>
+                <div class="col-12">2</div>
+                <div class="col-12">3</div>
+                <div class="col-12">4</div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <!-- <div class="container bg-info h-100 d-flex">
+        <img src="../image/testimg.jpg" alt="">
+        <p class="align-self-center">Lorem, ipsum dolor.</p>
+    </div> -->
+
+
+    <div class="container bg-info h-100 d-flex align-items-center 
+    justify-content-between flex-row flex-lg-column">
+        <!-- h-100 => body값의 height가 100%여야 적용이 됨. -->
+        <img src="../image/testimg.jpg" alt="">
+        <p>Lorem, ipsum dolor.</p>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
