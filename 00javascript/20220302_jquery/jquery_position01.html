@@ -35,26 +35,40 @@
         자동차 이미지 크기 : <span class="carWidth">0</span><br>
         지역위치 : <span class="carPos">0</span><br>
         전역위치 : <span class="carOff">0</span><br>
+        화면크기 : <span class="winWidth">0</span><br>
     </div>
     <script>
-        let $carPos = $(".car").position();
-        let $carOff = $(".car").offset();
+        // var init
+        let $carPos;
+        let $carOff;
+        let winWidth;
+        // let $carPos = $(".car").position();
+        // let $carOff = $(".car").offset();
+        // let winWidth = $(window).width();
 
-        $(".carWidth").html( "width : " + $(".car").width() + "px, height : " + $(".car").height() + "px")
-        // $(".carPos").html($carPos.left)
-        $(".carPos").html(`left : ${$carPos.left}px, top : ${$carPos.top}px`)
-        $(".carOff").html(`left : ${$carOff.left}px, top : ${$carOff.top}px`)
+        // $(".carWidth").html( "width : " + $(".car").width() + "px, height : " + $(".car").height() + "px")
+        // $(".carPos").html(`left : ${$carPos.left}px, top : ${$carPos.top}px`)
+        // $(".carOff").html(`left : ${$carOff.left}px, top : ${$carOff.top}px`)
+        // $(".winWidth").html(winWindth);
 
         $(window).resize(function(){ //새로고침을 해야 위치가 수정되기때문에 resize를 해줘야함.
             console.log("resize");
+            // winResize();
+            setTimeout(winResize,0);
+        })
 
+        function winResize(){
             $carPos = $(".car").position();
             $carOff = $(".car").offset();
+            winWidth = $(window).width();
 
             $(".carWidth").html( "width : " + $(".car").width() + "px, height : " + $(".car").height() + "px")
-            $(".carPos").html(`left : ${$carPos.left}px, top : ${$carPos.top}px`)
-            $(".carOff").html(`left : ${$carOff.left}px, top : ${$carOff.top}px`)
-        })
+            $(".carPos").html(`left : ${$carPos.left}px, top : ${$carPos.top}px`);
+            $(".carOff").html(`left : ${$carOff.left}px, top : ${$carOff.top}px`);
+            $(".winWidth").html(winWidth);
+        }
+
+        winResize();
 
     </script>
 </body>
