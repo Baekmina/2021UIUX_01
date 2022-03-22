@@ -29,13 +29,31 @@
 
 
         .car1{position: absolute;left: 0;transition: 0.3s;opacity: 0;}
-        .car1.move{position: absolute;left: 200px;opacity: 1;}
+        .car1.move{left: 200px;opacity: 1;}
 
         .car2{position: absolute;right: 0;transition: 0.3s;opacity: 0;}
         .car2.moving{
             transform: rotateY(180deg);
-            position: absolute;right: 250px;opacity: 1;
+            right: 250px;opacity: 1;
         }
+
+        .car3{
+            position: absolute;right: 0;transform: rotateY(180deg);
+            transition: 0.3s;opacity: 0;
+        }
+        .car3.move{right: 200px;opacity: 1;}
+
+        .top{
+            background: skyblue;
+            width: 50px;height: 50px;
+            position: fixed;
+            right: 20px;bottom: 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;justify-content: center;align-items: center;
+            opacity: 0;transition: 0.3s;
+        }
+        .top.view{opacity: 1;}
     </style>
 </head>
 <body>
@@ -84,6 +102,7 @@
         <p>038</p>
         <p>039</p>
         <p>040</p>
+        <img src="../image/car.png" alt="" class="car3">
         <p>041</p>
         <p>042</p>
         <p>043</p>
@@ -152,12 +171,14 @@
         <p>098</p>
         <p>099</p>
         <p>100</p>
+        <div class="top">top</div>
     </div>
 
     <script>
         const menuPos = $(".menu").offset().top; //초기값
         const car1Pos = $(".car1").offset().top; 
         const car2Pos = $(".car2").offset().top; 
+        const car3Pos = $(".car3").offset().top; 
 
         console.log("car1 : " + car1Pos);
 
@@ -204,7 +225,26 @@
                 $(".car2").removeClass("moving");
             }
 
+            if(car3Pos < scrollY + 200 ){
+                $(".car3").addClass("move");
+            }else{
+                $(".car3").removeClass("move");
+            }
+
+
+
+            if( ( $(document).height() - $(window).height() ) / 2 < scrollY){
+                $(".top").addClass("view");
+            }else{
+                $(".top").removeClass("view");
+            }
+
+
         });
+
+        $(".top").click(function(){
+            $("html,body").animate({scrollTop:0},1000);
+        })
     </script>
 </body>
 </html>
