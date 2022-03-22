@@ -13,6 +13,7 @@
             position: fixed;right: 0;top: 0;
             background: #ccc;
             padding: 16px;
+            z-index: 10;
         }
         .menu{display: flex;background: white;border: 1px solid #000;}
         .menu.fixed{position: fixed;top: 0;width: 100%;}
@@ -25,6 +26,16 @@
         }
         .menu li a{display: block;line-height: 50px;transition: 0.3s;}
         .menu li:hover{flex-grow: 1.5;background: skyblue;}
+
+
+        .car1{position: absolute;left: 0;transition: 0.3s;opacity: 0;}
+        .car1.move{position: absolute;left: 200px;opacity: 1;}
+
+        .car2{position: absolute;right: 0;transition: 0.3s;opacity: 0;}
+        .car2.moving{
+            transform: rotateY(180deg);
+            position: absolute;right: 250px;opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -110,6 +121,7 @@
         <p>068</p>
         <p>069</p>
         <p>070</p>
+        <img src="../image/car.png" alt="" class="car2">
         <p>071</p>
         <p>072</p>
         <p>073</p>
@@ -144,12 +156,31 @@
 
     <script>
         const menuPos = $(".menu").offset().top; //초기값
+        const car1Pos = $(".car1").offset().top; 
+        const car2Pos = $(".car2").offset().top; 
+
+        console.log("car1 : " + car1Pos);
 
         $(".menuPos").html(menuPos);
 
-        $(window).scroll(function(){
+        // javascript
+
+        // window.addEventListener("scroll",function(){
+        //     let scrollY = window.pageYOffset;
+        //     const menuElem = document.querySelector(".menu");
+
+        //     if( menuPos < scrollY ){ // 변화되는 값을 기준으로 해야함.
+        //         menuElem.classList.add("fixed");
+        //     }else{
+        //         menuElem.classList.remove("fixed");
+        //     };
+        // });
+
+        //jquery
+
+        $(window).scroll(function(){ 
             // console.log("scroll");
-            // console.log(window.pageYOffset);
+            // console.log(window.pageYOffset); // 자바스크립트
             console.log($(window).scrollTop());
             $(".scrollY").html($(window).scrollTop());
 
@@ -160,6 +191,18 @@
             }else{
                 $(".menu").removeClass("fixed");
             };
+
+            if(car1Pos < scrollY + 300){
+                $(".car1").addClass("move");
+            }else{
+                $(".car1").removeClass("move");
+            }
+
+            if(car2Pos < scrollY + 300){
+                $(".car2").addClass("moving");
+            }else{
+                $(".car2").removeClass("moving");
+            }
 
         });
     </script>
