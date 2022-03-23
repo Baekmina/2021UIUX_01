@@ -89,7 +89,7 @@
 
         $(".menuWrap a").eq(0).click(function(e){
             console.log($(this).index())
-            e.preventDefault(); // 이동하지X
+            e.preventDefault(); // a href 이동을 제거
             $(".menuWrap a").removeClass("active"); // a 전체 active 제거
             $(this).addClass("active"); // 자신만 active 추가
             $("html,body").animate({scrollTop:oneTop});
@@ -107,6 +107,24 @@
             $(".menuWrap a").removeClass("active"); 
             $(this).addClass("active");
             $("html,body").animate({scrollTop:threeTop});
+        });
+
+
+        $(window).scroll(function(){
+            let scrollY = $(window).scrollTop();
+            console.log(scrollY);
+
+            if(oneTop <= scrollY){
+                $(".menuWrap a").removeClass("active").eq(0).addClass("active");
+            };
+
+            if(twoTop <= scrollY){
+                $(".menuWrap a").removeClass("active").eq(1).addClass("active");
+            };
+
+            if(threeTop <= scrollY){
+                $(".menuWrap a").removeClass("active").eq(2).addClass("active");
+            };
         });
 
     </script>
