@@ -27,39 +27,88 @@
             content:"";display: block;width: 80%;height: 2px;background: #fff;
             margin: 10px auto;
         }
-        .menu{display: none;}
+        .menu{
+            background: white;position: fixed;
+            width: 100%;padding: 10px 16px;
+            display: flex;
+        }
+        .menuWrap{display: flex;}
+        .menuWrap a{
+            padding: 0 10px;
+            display: flex;align-items: center;
+            margin-left: 5px;
+        }
+        .menuWrap a.active{background: pink;}
+        .menuWrap a:hover{background: pink;}
+        
 
 
         @media screen and (max-width:768px) { 
             /* 화면의 최대값이 768px일 때 그의 미만 값이 실행 */
             .scene .viewTxt{width: 80%;text-align: left;}
-            .scene .viewTxt h2:after{margin: initial;margin-top: 15px;margin-bottom: 15px;}
+            .scene .viewTxt h2:after{margin: initial;margin-top: 16px;margin-bottom: 16px;}
+            .menuWrap{margin-left: auto;}
         }
     </style>
 </head>
 <body>
     <nav class="menu">
-        <a href="#">MENU01</a>
-        <a href="#">MENU02</a>
-        <a href="#">MENU03</a>
+        <h1 class="logo"><a href="#">LOGO</a></h1>
+        <div class="menuWrap">
+            <a href="#v01" class="active">MENU01</a>
+            <a href="#v02">MENU02</a>
+            <a href="#v03">MENU03</a>
+        </div>
     </nav>
-    <section class="scene one">
+    <section class="scene one" id="v01">
         <div class="viewTxt">
             <h2>#1 Lorem ipsum dolor sit amet.</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque tempore incidunt ipsam vero asperiores, vel mollitia corrupti placeat eius distinctio voluptas autem ullam possimus voluptatibus laudantium cupiditate soluta dolorum molestias!</p>
         </div>
     </section>
-    <section class="scene two">
+    <section class="scene two" id="v02">
         <div class="viewTxt">
             <h2>#2 Lorem ipsum dolor sit amet.</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque tempore incidunt ipsam vero asperiores, vel mollitia corrupti placeat eius distinctio voluptas autem ullam possimus voluptatibus laudantium cupiditate soluta dolorum molestias!</p>
         </div>
     </section>
-    <section class="scene three">
+    <section class="scene three" id="v03">
         <div class="viewTxt">
             <h2>#3 Lorem ipsum dolor sit amet.</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque tempore incidunt ipsam vero asperiores, vel mollitia corrupti placeat eius distinctio voluptas autem ullam possimus voluptatibus laudantium cupiditate soluta dolorum molestias!</p>
         </div>
     </section>
+
+    <script>
+        // #1
+        const oneTop = $("#v01").offset().top;
+        const twoTop = $("#v02").offset().top;
+        const threeTop = $("#v03").offset().top;
+
+        console.log(oneTop + ", " + twoTop + ", " + threeTop);
+
+        $(".menuWrap a").eq(0).click(function(e){
+            console.log($(this).index())
+            e.preventDefault(); // 이동하지X
+            $(".menuWrap a").removeClass("active"); // a 전체 active 제거
+            $(this).addClass("active"); // 자신만 active 추가
+            $("html,body").animate({scrollTop:oneTop});
+        });
+        $(".menuWrap a").eq(1).click(function(e){
+            console.log($(this).index())
+            e.preventDefault();
+            $(".menuWrap a").removeClass("active"); 
+            $(this).addClass("active");
+            $("html,body").animate({scrollTop:twoTop});
+        });
+        $(".menuWrap a").eq(2).click(function(e){
+            console.log($(this).index())
+            e.preventDefault();
+            $(".menuWrap a").removeClass("active"); 
+            $(this).addClass("active");
+            $("html,body").animate({scrollTop:threeTop});
+        });
+
+    </script>
 </body>
 </html>
