@@ -139,18 +139,42 @@
             let scrollY = $(window).scrollTop();
             console.log(scrollY);
 
-            if(oneTop <= scrollY){
-                $(".menuWrap a").removeClass("active").eq(0).addClass("active");
-            };
+            // #1
+            // if(oneTop <= scrollY){
+            //     $(".menuWrap a").removeClass("active").eq(0).addClass("active");
+            // };
 
-            if(twoTop <= scrollY){
-                $(".menuWrap a").removeClass("active").eq(1).addClass("active");
-            };
+            // if(twoTop <= scrollY){
+            //     $(".menuWrap a").removeClass("active").eq(1).addClass("active");
+            // };
 
-            if(threeTop <= scrollY){
-                $(".menuWrap a").removeClass("active").eq(2).addClass("active");
-            };
+            // if(threeTop <= scrollY){
+            //     $(".menuWrap a").removeClass("active").eq(2).addClass("active");
+            // };
+
+
+
+            // #2
+            // for(let i=0;i<$(".scene").length;i++){ //$(".menuWrap a")으로 해도 됨.
+            //     // console.log(i)
+            //     if($(".scene").eq(i).offset().top <= scrollY){
+            //         $(".menuWrap a").removeClass("active").eq(i).addClass("active");
+            //     }
+            // }
+
+
+
+            // #3
+            $(".scene").each(function(index){
+                if($(this).offset().top <= scrollY){
+                    $(".menuWrap a").removeClass("active").eq(index).addClass("active");
+                }
+            })
+
         });
+
+
+        
 
     </script>
 </body>
