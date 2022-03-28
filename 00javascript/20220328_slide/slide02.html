@@ -16,7 +16,7 @@
             position: relative;
         }
         .container .slide{
-            width: 500%; /* w1000이 5개 있기 때문에 500%로 해도 됨. */
+            width: 600%; /* w1000이 6개 있기 때문에 600%로 해도 됨. */
             display: flex;position: absolute;left: 0;
             /* left:0을 넣으면 이미지01, left:-100%를 넣으면 이미지02가 나옴. ~ -400%까지 가능. */
             _transition: 0.3s;
@@ -40,39 +40,30 @@
                 <img src="../image/images04.jpg" alt="">
             </div>
             <div class="item">
+                <img src="../image/images05.jpg" alt="">
+            </div>
+            <div class="item">
                 <img src="../image/images01.jpg" alt="">
             </div>
         </div>
     </div>
-    <button onclick="btn()">이동</button>
     <script>
+        // css의 경우
+        //css("left",value).css("top",value)~~~~
+        //css({"left":value,"top":value})
+
+        
         let num = 0;
-
-        // #1
-        function btn(){
+        function slide(){
             num++;
-            if(num == 5){
-                num = 1; 
-                // num = 0 : 다시 맨 앞으로 돌아가게 하기 위해
-                // num = 1 : 0을 안나오게 처리
-                $(".slide").css("left",0)
-            }; 
-            console.log(num);
-            // $(".slide").css("left",-num*100 + "%");
-            // $(".slide").stop().animate({left:-num*100 + "%"},300); // transition과 겹치지않도록해야함.
-            $(".slide").stop().animate({left:-num*100 + "%"},500); 
-        };
-
-        setInterval(btn,3000) // 3초당 자동으로 움직이기
-
-
-        // #2
-        // setInterval(function(){
-        //     num++;
-        //     if(num == 5){num = 0}; 
-        //     console.log(num);
-        //     $(".slide").stop().animate({left:-num*100 + "%"},500); 
-        // },1000);
+            if(num == $(".item").length){
+                num = 1;
+                $(".slide").css("left",0);
+            };
+            console.log(num)
+            $(".slide").stop().animate({left:-100*num + "%"},1000);
+        }
+        // slide();
+        setInterval(slide,1000);
     </script>
 </body>
-</html>
