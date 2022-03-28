@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+   
+    <style>
+        :root{
+            --bs-color1:skyblue;
+        }
+        .container{}
+        .cell1{background: var(--bs-color1);}
+
+    </style>
+</head>
+<body>
+    <!-- 
+        0 0rem
+        1 0.25rem = 4px
+        2 0.5rem = 8px
+        3 1rem = 16px
+        4 1.5rem = 24px
+        5 3rem = 48px
+     -->
+    <div class="bg-dark py-5">
+        <div class="container text-white">
+            <h3 class="text-center mb-5 mb-lg-3">GALLERY</h3>
+            <p class="text-center d-none d-lg-block">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, quasi.
+            </p>
+            <div class="row text-center">
+                <div class="col-12 col-sm-6 col-lg-3 bg-primary">1</div>
+                <div class="col-12 col-sm-6 col-lg-3 bg-info">2</div>
+                <div class="col-12 col-sm-6 col-lg-3 bg-success">3</div>
+                <div class="col-12 col-sm-6 col-lg-3 bg-warning">4</div>
+            </div>
+        </div>
+    </div>
+    <div class="py-5">
+        <div class="container">
+            <h3 class="text-left text-lg-center mb-5 mb-lg-3">GALLERY</h3>
+            <p class="text-center d-none d-lg-block">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, quasi.
+            </p>
+            <button class="btn btn-primary d-block m-lg-auto">MORE</button>
+            <!-- m은 기본값이 left -->
+        </div>
+    </div>
+
+    <div class="btn btn-primary">more</div>
+    <a href="#!" class="btn btn-info">view</a> <!-- #에 !를 넣으면 위로 가지 않음. -->
+    <button class="btn btn-success">view</button>
+
+    <div class="btn-group">
+        <button class="btn btn-primary active">btn01</button>
+
+        <div class="btn-group">
+            <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">btn02</button>
+            <div class="dropdown-menu">
+                <div class="dropdown-item">sub1</div>
+                <div class="dropdown-item">sub2</div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary">btn03</button>
+    </div>
+
+    <a name="" id="" class="btn btn-primary" href="#" role="button">view</a>
+    
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapseOne">
+            Accordion Item #1
+          </button>
+        </h2>
+        <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            This is the first item's accordion body.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapseOne">
+            Accordion Item #2
+          </button>
+        </h2>
+        <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            This is the first item's accordion body.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapseOne">
+            Accordion Item #3
+          </button>
+        </h2>
+        <div id="collapse3" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            This is the first item's accordion body.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
