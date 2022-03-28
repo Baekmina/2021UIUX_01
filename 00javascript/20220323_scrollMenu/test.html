@@ -99,25 +99,24 @@
         //     }
         // })
 
-
-
-        $(".menuWrap a").click(function(e){
+       $(".menuWrap a").click(function(e){
             e.preventDefault();
             let i = $(this).index();
-            let st = $(".scene").eq(i).offset().top
 
-            $("html,body").animate({scrollTop:st})
-        })
+            $("html,body").animate({scrollTop:$(".scene").eq(i).offset().top})
+       })
 
-        $(window).scroll(function(){
-            let scrollY = $(window).scrollTop();
+       $(window).scroll(function(){
+           let scrollY = $(window).scrollTop();
 
-            for(let i=0;i<$(".scene").length;i++){
-                if($(".scene").eq(i).offset().top <= scrollY){
-                    $(".menuWrap a").removeClass("active").eq(i).addClass("active")
-                }
-            }
-        })
+           for(let i=0;i<$(".scene").length;i++){
+               if($(".scene").eq(i).offset().top <= scrollY){
+                   $(".menuWrap a").removeClass("active").eq(i).addClass("active")
+               }
+           }
+       })
+
+
     </script>
 </body>
 </html>
