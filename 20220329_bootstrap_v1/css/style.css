@@ -1,0 +1,6 @@
+@charset 'utf-8';
+
+:root{
+    --bg-color1:#4458cc;
+}
+.bg-color1{background: var(--bg-color1);}
