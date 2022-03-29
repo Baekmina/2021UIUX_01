@@ -36,21 +36,144 @@
       </div>
     </nav>
 
-    <div class="container">
-        <div class="row">  <!-- col-12가 기본값이기 때문에 적지 않아도 됨. 2단 적용하고 싶다면 col-6 -->
-            <div class="col-md-6">
-                <h2>Lorem, ipsum dolor.</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, ipsa?</p>
+    <div class="visual">
+        <div class="container px-5"> <!-- row 값에 flex값이 기본으로 들어감 -->
+            <div class="row py-5">  <!-- col-12가 기본값이기 때문에 적지 않아도 됨. 2단 적용하고 싶다면 col-6 -->
+                <div class="col-md-6 order-2 order-md-1 align-self-center text-center text-md-start">
+                    <h2>Lorem, ipsum dolor.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, ipsa?</p>
+                    <a href="#!" class="btn primary-button px-4 text-white">MORE</a>
+                    <a href="#!" class="btn btn-outline-primary px-4">EMAIL</a>
+                </div>
+                <div class="col-md-6 order-1 order-md-2 mb-5 mb-md-0 p-5 pt-2">
+                    <img src="assets/slider.svg" alt="" class="img-fluid">
+                </div>
             </div>
-            <div class="col-md-6">
-                <img src="assets/slider.svg" alt="" class="img-fluid">
-            </div>
-            
         </div>
     </div>
-    
+    <div class="bg-gray3">
+        <div class="container py-5">
+            <div class="row px-5">
+                <div class="col-md-6 p-5">
+                    <img src="assets/sobre.svg" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6 text-center text-md-end align-self-center">
+                    <h2>Lorem ipsum dolor sit.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti, facilis?</p>
+                    <a href="#!" class="btn primary-button px-5 text-white">ENTER CONTACT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-5 content-1s">
+        <h3 class="text-center afterBar">SERVICE</h3>
+        <p class="text-center mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, aliquam.</p>
+        <div class="row">
+            <div class="col-sm-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="card p-3 text-center text-sm-start pt-5">
+                    <img src="assets/destaque1.svg" alt="" class="card-img-top mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title">Lorem, ipsum.</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, esse.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="card p-3 text-center text-sm-start pt-5">
+                    <img src="assets/destaque2.svg" alt="" class="card-img-top mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title">Lorem, ipsum.</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, esse.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="card p-3 text-center text-sm-start pt-5">
+                    <img src="assets/destaque3.svg" alt="" class="card-img-top mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title">Lorem, ipsum.</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, esse.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="card p-3 text-center text-sm-start pt-5">
+                    <img src="assets/destaque4.svg" alt="" class="card-img-top mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title">Lorem, ipsum.</h3>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, esse.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio">
+        <div class="container">
+            <h3 class="text-center afterBar">PORTFOLIO</h3>
+            <p class="text-center mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, aliquam.</p>
+            <div class="btn-group mb-3">
+                <button class="btn btn-primary active" data-filter="" id="btnAll">All</button>
+                <button class="btn btn-primary" data-filter=".web">Web</button>
+                <button class="btn btn-primary" data-filter=".photo">Photoshop</button>
+                <button class="btn btn-primary" data-filter=".illust">Illustrator</button>
+            </div>
+            <div class="row view">
+                <div class="col-6 col-lg-3 element-item web mb-3">
+                    <img src="assets/servicos/1.jpg" alt="" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-lg-3 element-item photo mb-3">
+                    <img src="assets/servicos/2.jpg" alt="" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-lg-3 element-item web mb-3">
+                    <img src="assets/servicos/3.jpg" alt="" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-lg-3 element-item illust mb-3">
+                    <img src="assets/servicos/4.jpg" alt="" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-lg-3 element-item web mb-3">
+                    <img src="assets/servicos/5.jpg" alt="" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-lg-3 element-item photo mb-3">
+                    <img src="assets/servicos/6.jpg" alt="" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-lg-3 element-item web mb-3">
+                    <img src="assets/servicos/7.jpg" alt="" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-lg-3 element-item illust mb-3">
+                    <img src="assets/servicos/8.jpg" alt="" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-lg-3 element-item illust mb-3">
+                    <img src="assets/servicos/9.jpg" alt="" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+
+
+    <script>
+        const btnElem = $(".portfolio .btn-group button")
+
+        btnElem.click(function(){
+            let i = $(this).index();
+
+            btnElem.removeClass("active");
+            $(this).addClass("active");
+
+            let selector = $(this).attr("data-filter");
+            console.log(selector);
+
+            $(".portfolio .view").isotope({
+                filter:selector
+            });
+        })
+
+        window.onload = function(){
+            $("#btnAll").trigger("click"); // 문서가 로드되면 all로 시작되는 것.
+        }
+    </script>
 </body>
 </html>
