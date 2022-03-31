@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <style>
+        .wrapper{width: 700px;height: 280px;margin: 0 auto;overflow: hidden;}
+        .wrapper ul{width: 100%;position: relative;}
+        .wrapper li{position: absolute;width: 100%;left: 100%;}
+        .wrapper li:first-child{left: 0;}
+        .wrapper li img{width: 100%;}
+        /* top으로 움직일 경우 높이값을 주어야함. wrapper, ul : h280 / li : h100% */
+    </style>
+</head>
+<body>
+    <div class="wrapper" id="app">
+        <!-- {{text}} -->
+        <ul>
+            <!-- <li v-for="item in img"><img v-bind:src=`../image/${item}` alt=""></li> -->
+            <li><img src="../image/images01.jpg" alt=""></li>
+            <li><img src="../image/images02.jpg" alt=""></li>
+            <li><img src="../image/images03.jpg" alt=""></li>
+            <li><img src="../image/images04.jpg" alt=""></li>
+            <li><img src="../image/images05.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        // new Vue({
+        //     el:"#app",
+        //     data:{
+        //         text:"안녕하세요",
+        //         img:["images01.jpg","images02.jpg","images03.jpg","images01.jpg","images02.jpg","images03.jpg"]
+        //     },
+        // });
+
+        // $(".wrapper li").eq(0).stop().animate({left:"-100%"},1000);
+        // $(".wrapper li").eq(1).stop().animate({left:0},1000);
+        // $(".wrapper li").eq(1).css("left","100%").animate({left:0},1000); //위에 100%를 잡아놔서 css는 생략
+            
+        let num = 0;
+        let viewTop = 0;
+
+        function slider(){
+            $(".wrapper li").eq(num).css("left",0).stop().animate({left:"-100%"},1000)
+            num++;
+            if(num == 5){num = 0}
+            $(".wrapper li").eq(num).css({left:"100%"}).stop().animate({left:0},1000);
+        };
+        slider();
+        setInterval(slider,3000)
+    
+    </script>
+</body>
+</html>

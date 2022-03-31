@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <style>
+        .wrapper{width: 700px;height: 280px;margin: 0 auto;overflow: hidden;}
+        .wrapper li img{width: 700px;}
+        .wrapper ul{width: 100%;position: relative;}
+        .wrapper ul li{position: absolute;width: 100%;opacity: 0;}
+        .wrapper ul li:first-child{left: 0;}
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <ul>
+            <li><img src="../image/images01.jpg" alt=""></li>
+            <li><img src="../image/images02.jpg" alt=""></li>
+            <li><img src="../image/images03.jpg" alt=""></li>
+            <li><img src="../image/images04.jpg" alt=""></li>
+            <li><img src="../image/images05.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+
+    <script>
+        let num = 0;
+        let viewTop = 0;
+
+        function slide(){
+            $(".wrapper li").eq(num).css("opacity",1)
+            num++;
+            if(num == 5){num = 0}
+            $(".wrapper li").eq(num).css({opacity:0,"z-index":viewTop++}).stop().animate({opacity:1},1000)
+        }
+        slide();
+        setInterval(slide,2000);
+    </script>
+</body>
+</html>
