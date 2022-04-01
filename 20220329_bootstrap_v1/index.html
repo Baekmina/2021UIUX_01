@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-gray3">
+    <div class="bg-gray3 lazy-load">
         <div class="container py-5">
             <div class="row px-5">
                 <div class="col-md-6 p-5">
@@ -68,7 +68,7 @@
             </div>
         </div>
     </div>
-    <div class="container py-5 content-1s">
+    <div class="container py-5 content-1s lazy-load">
         <h3 class="text-center afterBar">SERVICE</h3>
         <p class="text-center mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, aliquam.</p>
         <div class="row">
@@ -110,7 +110,7 @@
             </div>
         </div>
     </div>
-    <div class="portfolio">
+    <div class="portfolio lazy-load mb-5">
         <div class="container">
             <h3 class="text-center afterBar">PORTFOLIO</h3>
             <p class="text-center mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, aliquam.</p>
@@ -151,7 +151,7 @@
             </div>
         </div>
     </div>
-    <div class="customer">
+    <div class="customer lazy-load mb-5">
         <div class="container">
             <h3 class="text-center afterBar">CUSTOMER</h3>
             <P class="text-center mb-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, iste?</P>
@@ -200,7 +200,7 @@
         </div>
     </div>
 
-    <div class="com">
+    <div class="com lazy-load mb-5">
         <div class="container">
             <div class="owl-carousel owl-theme owl-loaded" id="owlSlider2">
                 <img src="assets/servicos/1.jpg" alt="">
@@ -283,7 +283,7 @@
         });
 
         $("#owlSlider2").owlCarousel({
-            loop:false,
+            loop:true,
             center:true,
             autoplay:true,
             margin:30,
@@ -292,6 +292,17 @@
                 600:{items:2},
                 1000:{items:4},
             }
+        });
+
+        const lazyLoad = document.querySelectorAll(".lazy-load"); // 모든 이미지 파일 선택
+        window.addEventListener("scroll", (event) => { 
+        lazyLoad.forEach((view) => { // 각 이미지마다
+            console.log("Scrolling...");
+            const rect = view.getBoundingClientRect().top; // getBoundingClientRect = pageYOffset(해당 높이)와 똑같음.
+            if (rect <= window.innerHeight) { // 이미지가 보일 타이밍을 계산
+                view.classList.add("fade"); // 트랜지션 추가
+            }
+        });
         });
     </script>
 </body>
