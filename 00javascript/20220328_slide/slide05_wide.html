@@ -75,7 +75,7 @@
 
         $(".next").click(function(){
             if(overBtn == true){
-                overBtn = fales;
+                overBtn = false;
                 nextCurrent = current + 1;
                 if(nextCurrent == banCount){nextCurrent = 0};
                 slider("next");
@@ -83,7 +83,7 @@
         })
         $(".prev").click(function(){
             if(overBtn == true){
-                overBtn - false;
+                overBtn = false;
                 nextCurrent = current - 1;
                 if(nextCurrent < 0){nextCurrent = banCount - 1}
                 slider("prev");
@@ -104,7 +104,7 @@
                     overBtn = true;
                 });
             }
-            currnet = nextCurrent;
+            current = nextCurrent;
         }
 
 
