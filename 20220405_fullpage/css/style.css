@@ -1,0 +1,12 @@
+@charset 'utf-8';
+
+.section{
+    background-repeat: no-repeat;background-position: center;background-size: cover;
+}
+.section.page1{background-image: url(../images/bg1.jpg);}
+.section.page2{background-image: url(../images/bg2.jpg);}
+.section.page3{background-image: url(../images/bg3.jpg);}
+.section.page4{background-image: url(../images/bg4.jpg);}
+
+.topMenu li.active{background: skyblue;border-radius: 5px;}
+.topMenu li.active a{color:#000 !important;}
