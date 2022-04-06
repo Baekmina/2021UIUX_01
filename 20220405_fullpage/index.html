@@ -38,10 +38,10 @@
     </nav>
     <div id="fullpage">
         <div class="section page1" data-anchor="m1st">
-            <h2 class="text-center">1Lorem, ipsum.</h2>
+            <h2 class="text-center t1">1Lorem, ipsum.</h2>
         </div>
         <div class="section page2" data-anchor="m2st">
-            <h2 class="text-center">2Lorem, ipsum.</h2>
+            <h2 class="text-center t2">2Lorem, ipsum.</h2>
         </div>
         <div class="section page3" data-anchor="m3st">
             <h2 class="text-center">3Lorem, ipsum.</h2>
@@ -63,6 +63,23 @@
         anchors:["m1st","m2st","m3st","m4st"],
         navigation:true,
         });
+
+
+        const view=[
+            {
+                idx:1,
+                title:"title",
+                txt:"안녕하세요",
+            },
+            {
+                idx:2,
+                title:"title1",
+                txt:"반가워요",
+            }
+        ]
+
+        $(".t1").html(view[0].title) // 컴퓨터는 0부터 시작함
+        $(".t2").html(view[1].title)
         
     </script>
 
