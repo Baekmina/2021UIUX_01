@@ -38,16 +38,36 @@
     </nav>
     <div id="fullpage">
         <div class="section page1" data-anchor="m1st">
-            <h2 class="text-center t1">1Lorem, ipsum.</h2>
+            <!-- <h2 class="text-center t1">1Lorem, ipsum.</h2>
+            <p class="text-center t1" style="transition-delay:0.3s;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, libero!</p> -->
+            <video id="video" muted loop data-autoplay>
+                <source src="images/붓_1.mp4">
+            </video>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 bg-primary t1">1</div>
+                    <div class="col-md-3 bg-info t1" style="transition-delay:0.2s;">2</div>
+                    <div class="col-md-3 bg-success t1" style="transition-delay:0.4s;">3</div>
+                    <div class="col-md-3 bg-danger t1" style="transition-delay:0.6s;">4</div>
+                </div>
+            </div>
+            <div class="nextBtn">
+                <a href="#m2st"><img src="images/btn_scroll.png" alt=""></a>
+            </div>
         </div>
         <div class="section page2" data-anchor="m2st">
-            <h2 class="text-center t2">2Lorem, ipsum.</h2>
+            <h2 class="text-center">2Lorem, ipsum.</h2>
         </div>
         <div class="section page3" data-anchor="m3st">
             <h2 class="text-center">3Lorem, ipsum.</h2>
         </div>
         <div class="section page4" data-anchor="m4st">
             <h2 class="text-center">4Lorem, ipsum.</h2>
+        </div>
+        <div class="section page5 fp-auto-height">
+            <div class="container text-center">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aliquam ullam nihil repudiandae minima labore est eos at quam ea.
+            </div>
         </div>
     </div>
 
@@ -59,27 +79,45 @@
 
     <script>
         $("#fullpage").fullpage({
-        menu:".topMenu",
-        anchors:["m1st","m2st","m3st","m4st"],
-        navigation:true,
+            menu: ".topMenu",
+            anchors: ["m1st", "m2st", "m3st", "m4st"],
+            navigation: true,
+            responsiveWidth:1000, // 모바일버전에서 스크롤적용x (= max-width:1000px)
+            navigationTooltips:['home','company','product','community'],
+            showActiveTooltip:true,
+            afterLoad: function (anchorslink, index) {
+                console.log(index)
+                if(index == 1){
+                    $(".t1").addClass("move")
+                }else{
+                    $(".t1").removeClass("move")
+                }
+            },
         });
 
 
-        const view=[
-            {
-                idx:1,
-                title:"title",
-                txt:"안녕하세요",
-            },
-            {
-                idx:2,
-                title:"title1",
-                txt:"반가워요",
-            }
-        ]
+        // const view=[
+        //     {
+        //         idx:1,
+        //         title:"title1",
+        //         txt:"안녕하세요",
+        //     },
+        //     {
+        //         idx:2,
+        //         title:"title2",
+        //         txt:"반가워요",
+        //     }
+        // ]
+        
+        // let text = "";
+        // text += "<h3>" + view[0].title + "</h3>";
+        // text += "<p>" + view[0].txt + "</p>";
 
-        $(".t1").html(view[0].title) // 컴퓨터는 0부터 시작함
-        $(".t2").html(view[1].title)
+        // console.log(text)
+        // $(".t1").html(text)
+
+        // $(".t1").html(view[0].title) // 컴퓨터는 0부터 시작함
+        // $(".t2").html(view[1].title)
         
     </script>
 
