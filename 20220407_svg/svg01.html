@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .cir01 {
+            fill: #fff;
+            stroke: black;
+            stroke-width: 2;
+            stroke-dasharray: 265; 
+            stroke-dashoffset: 265;
+            /* 265 = 원래의 크기(document.quertSelctor(".cir01").getTotalLength()) <- console창 */
+            animation: circle 1s alternate forwards;
+            transform: scaleY(0);
+            transform-origin: 50px 50px; /* 가운데에서 나타날 수 있도록 해줌 */
+            
+        }
+        @keyframes circle{
+            /* from{stroke-dashoffset: 0;} */
+            to{stroke-dashoffset: 0;fill:#00f;transform: scaleY(1);}
+        }
+        .box,.box1{width: 100px;height: 100px;background: skyblue;}
+
+        .line1 {
+            fill: #0f0;
+            stroke: #000000;
+            stroke-width: 20;
+            _stroke-linecap: round;  /* 선 끝을 동그랗게 만들어주는 것 */
+            stroke-dasharray: 267;
+            stroke-dashoffset: 267;
+            animation: lineAni 1s alternate forwards;
+        }
+        @keyframes lineAni{
+            to{stroke-dashoffset: 200;}
+        }
+    </style>
+</head>
+<body>
+    <!-- 포토샵 svg로 저장할 때 code 눌러서 붙여넣기 -->
+    <div class="box">
+        <svg id="Layer_1" x="0px" y="0px">
+            <circle class="cir01" cx="50" cy="50" r="42.2" />
+        </svg>
+    </div>
+    <div class="box1">
+        <svg id="Layer_1" x="0px" y="0px" viewBox="0 0 150 150">
+            <path class="line1" d="M74.91,15.31C84.72,21.89,92.4,37.18,92.4,50c0,23.67-18.98,42.86-42.4,42.86S7.6,73.67,7.6,50
+    	    S26.58,7.14,50,7.14c9.37,0,18.04,3.08,25.06,8.28" />
+        </svg>
+    </div>
+</body>
+</html>
