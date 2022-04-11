@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .box{width: 400px;height: 400px;}
+        .st0 {
+            fill: none;
+            stroke: #000000;
+            stroke-dasharray: 465;
+            stroke-dashoffset: 465;
+            /* animation: lineAni 2s alternate forwards */
+        }
+        @keyframes lineAni{
+            to{stroke-dashoffset: 0;}
+        }
+        .box.on .st0{
+            animation: lineAni 2s alternate forwards
+        }
+        .box.on .line2{animation-delay: 0.2s;}
+        .box.on .line3{animation-delay: 0.4s;}
+        .box.on .line4{animation-delay: 0.6s;}
+        .box.on .line5{animation-delay: 0.8s;}
+        .box.on .line6{animation-delay: 1s;}
+        .box.on .line7{animation-delay: 1.2s;}
+        .box.on .line8{animation-delay: 1.4s;}
+        .box.on .line9{animation-delay: 1.6s;}
+    </style>
+</head>
+<body>
+    <div style="height: 1000px;"></div> <!-- 칸 띄어놓으려고 쓴 것임 -->
+    <div class="box">
+        <svg id="Layer_1" x="0px" y="0px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;">
+            <g>
+                <path class="st0 line1" d="M37.5,52.5c0,0-0.18,114.09,160.36,160.91S362.5,347.5,362.5,347.5" />
+                <path class="st0 line2" d="M50.31,47.41c0,0,7.82,112.78,139.52,166.36S357.84,350.9,357.84,350.9" />
+                <path class="st0 line3" d="M63.13,42.33c0,0,15.82,111.46,118.67,171.82S353.18,354.3,353.18,354.3" />
+                <path class="st0 line4" d="M75.94,37.24c0,0,23.82,110.15,97.82,177.27S348.52,357.7,348.52,357.7" />
+                <path class="st0 line5" d="M88.75,32.16c0,0,31.82,108.84,76.97,182.73S343.85,361.1,343.85,361.1" />
+                <path class="st0 line6" d="M101.57,27.07c0,0,39.82,107.53,56.12,188.18s181.51,149.24,181.51,149.24" />
+                <path class="st0 line7" d="M114.38,21.98c0,0,47.82,106.21,35.27,193.64s184.88,152.27,184.88,152.27" />
+                <path class="st0 line8" d="M127.19,16.9c0,0,55.82,104.9,14.42,199.09s188.25,155.3,188.25,155.3" />
+                <path class="st0 line9" d="M140.01,11.81c0,0,63.82,103.59-6.42,204.55s191.63,158.33,191.63,158.33" />
+            </g>
+        </svg>
+    </div>
+
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script>
+        const line = document.querySelectorAll(".box path");
+        const lineLength = line.length;
+        for(let i=0;i<lineLength;i++){
+            const totalLength = line[i].getTotalLength();
+            console.log(totalLength)
+        }
+        window.addEventListener("scroll",function(){
+            console.log(window.pageYOffset);
+            if(window.pageYOffset > 400){
+                document.querySelector(".box").classList.add("on")
+            }else{
+                document.querySelector(".box").classList.remove("on")
+            }
+        })
+        
+    </script>
+</body>
+</html>
