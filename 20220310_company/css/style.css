@@ -35,7 +35,9 @@
 }
 
 #header .lang .active{background: #f00;color:white}
+#header nav .submenu{display: none;}
 
+#header .moMenu{display: none;}
 
 /* visual */
 /* .visualWrap{min-height:800px} */

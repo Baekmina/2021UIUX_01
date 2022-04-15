@@ -50,13 +50,13 @@ $(document).ready(function(){
 
             if(chk == true){
                 $(this).addClass("active");
-                $(".navbar").css({left:0})
+                $(".moMenu").css({left:0})
                 $(".lang").css("display","flex");
                 $(".overLayer").show();
                 chk = false;
             }else{
                 $(this).removeClass("active");
-                $(".navbar").css({left:"-100%"})
+                $(".moMenu").css({left:"-100%"})
                 $(".lang").hide();
                 $(".overLayer").hide();
                 chk = true;
@@ -71,5 +71,6 @@ $(document).ready(function(){
             $(".overLayer").hide();
         })
 
-
+    
 }); //ready
+

@@ -25,11 +25,51 @@
             <h1><a href="#">LOGO</a></h1>
             <nav class="navbar">
                 <ul>
-                    <li><a href="#">회사소개</a></li>
-                    <li><a href="#">윤리경영</a></li>
-                    <li><a href="#">제품/기술</a></li>
-                    <li><a href="#">홍보채널</a></li>
-                    <li><a href="#">인재채용</a></li>
+                    <li>
+                        <a href="#">회사소개</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub01_01</a></li>
+                            <li><a href="#">sub01_02</a></li>
+                            <li><a href="#">sub01_03</a></li>
+                            <li><a href="#">sub01_04</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">윤리경영</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub01_01</a></li>
+                            <li><a href="#">sub01_02</a></li>
+                            <li><a href="#">sub01_03</a></li>
+                            <li><a href="#">sub01_04</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">제품/기술</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub01_01</a></li>
+                            <li><a href="#">sub01_02</a></li>
+                            <li><a href="#">sub01_03</a></li>
+                            <li><a href="#">sub01_04</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">홍보채널</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub01_01</a></li>
+                            <li><a href="#">sub01_02</a></li>
+                            <li><a href="#">sub01_03</a></li>
+                            <li><a href="#">sub01_04</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">인재채용</a>
+                        <ul class="submenu">
+                            <li><a href="#">sub01_01</a></li>
+                            <li><a href="#">sub01_02</a></li>
+                            <li><a href="#">sub01_03</a></li>
+                            <li><a href="#">sub01_04</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <div class="lang">
@@ -42,7 +82,14 @@
                 <div class="bar3"></div>
             </div>
             <div class="overLayer"></div>
+
+            <div class="moMenu">
+
+            </div>
         </div>
+            <script>
+                $(".navbar > ul").clone().appendTo(".moMemu")
+            </script>
     </header>
     <div class="visualWrap">
         <ul class="slider">
