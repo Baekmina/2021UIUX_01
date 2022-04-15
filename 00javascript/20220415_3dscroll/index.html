@@ -65,9 +65,15 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
+        .bar{width: 100%;height: 10px;background: #fff;position: fixed;z-index: 1;}
+        .bar .container{height: 10px;background: red;}
     </style>
 </head>
 <body>
+    <div class="bar">
+        <div class="container"></div>
+    </div>
     <div class="wrap"> <!-- perspective / pof -->
         <div class="stage">  <!-- transform-style / mouse pointer rotate -->
             <div class="house"> <!-- transform-style / scroll -->
@@ -85,16 +91,18 @@
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script>
         const houseElem = document.querySelector(".house");
+        const barElem = document.querySelector(".container");
 
         window.addEventListener("scroll",function(){
             let maxScroll = document.body.offsetHeight - window.innerHeight;
-            let move = window.pageYOffset / maxScroll * 998 - 500;
+            let rate = window.pageYOffset / maxScroll;
+            let move = rate * 998 - 500;
             // window.pageYOffset / maxScroll * 1000 : 0,1 -> 0,1000으로 바꿔줌
             // view6를 넘어가서 500만큼 빼줌
             console.log(move)
 
             houseElem.style.transform = "translate3d(0,0,"+ move +"vw)"
-
+            barElem.style.width = rate * 100 + "%";
         })
         // ()=>{} / = function(){}
     </script>
