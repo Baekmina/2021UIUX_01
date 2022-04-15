@@ -1,0 +1,112 @@
+@charset 'utf-8';
+
+/* header */
+/* body{height: 400vh;} 화면에 스크롤이 생기려면 body에 높이값을 주어야함. */
+.header{
+    width: 100vw;height: 100vh;background: #002A6F;overflow: hidden;
+    position: relative;
+}
+.header .layer{
+    width: 100vw;height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 1000px;
+    position: absolute;transition: 0.3s;
+}
+.header .layer.pic0{
+    background-image: url(../images/p0.png);
+    background-size: auto 850px;
+    background-position: 50% 100px;
+}
+.header .layer.pic1{
+    background-image: url(../images/sky01.png);
+    background-size: cover;
+}
+.header .layer.pic2{
+    background-image: url(../images/fire01.png);
+}
+.header .layer.pic3{
+    background-image: url(../images/logo-d.png);
+    background-size: auto;
+    background-position: 50% 140px;
+}
+.header .layer.pic4{
+    background-image: url(../images/cha01.png);
+    background-size: auto 300px;
+    background-position: 250px 650px;
+}
+.header .layer.pic5{
+    background-image: url(../images/cha02.png);
+    background-size: auto 200px;
+    background-position: 180px 550px;
+}
+.header .layer.pic6{
+    background-image: url(../images/cha03.png);
+    background-size: auto 150px;
+    background-position: 1500px 780px;
+}
+.header .layer.pic7{
+    background-image: url(../images/cha04.png);
+    background-size: auto 400px;
+    background-position: 1700px 550px;
+}
+.header .layer.pic8{
+    background-image: url(../images/cha05.png);
+    background-size: auto 400px;
+    background-position: 0 550px;
+}
+
+
+/* content 1 */
+
+
+.container,.container_two{width: 100vw;height: 100vh;margin: 0 auto;}
+.conWrap{
+    display: flex;justify-content: center;
+    padding: 100px;
+}
+.container .movieWrap{width: 1000px;margin: 0 auto;}
+.container .movie{margin-bottom: 40px;height: 192px;cursor: pointer;}
+.container .movie h3{
+    color:white;text-align: center;
+    line-height: 30px;padding-top: 10px;
+}
+.container .movie img{transition: 0.5s;}
+.container .movie img:hover{transform: scale(1.1);}
+.container .left{float: left;margin-right: 20px;}
+.container .right{
+    float: left;position: relative;
+    overflow: hidden;
+}
+.container .right img{width: 734px;height: 435px;transition: 0.5s;}
+.container .right .img01{
+    position: absolute;
+    width: 60px;height: 60px;
+    left: 50%;top: 50%;
+    margin-left: -30px;
+    margin-top: -30px;
+    cursor: pointer;
+}
+.container .right img:hover{transform: scale(1.1);}
+
+
+
+
+/* content 2 */
+
+.container_two{
+    height: 100vh;
+    background-image: url(../images/bg-m.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 0.3s;
+}
+
+
+
+
+/* common  */
+.black{background: black;}
+.gray{background: gray;}
+.pink{background: pink;}

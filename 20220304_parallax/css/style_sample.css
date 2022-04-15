@@ -1,0 +1,55 @@
+@charset 'utf-8';
+
+/* header */
+/* body{height: 400vh;} 화면에 스크롤이 생기려면 body에 높이값을 주어야함. */
+.header{
+    width: 100vw;height: 100vh;background: #feae1b;overflow: hidden;
+    position: relative;
+}
+/* 뷰포트(화면상에서의 뷰포트를 사용함) */
+.header .layer{
+    width: 100vw;height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 1000px;
+    position: absolute;transition: 0.3s;
+    /* transform-origin: center; 새로고침했을 때 가운데에서 조정하는 것*/
+}
+.header .layer.p0{
+    background-image: url(../images/parallax0.png);
+}
+.header .layer.pic1{
+    background-image: url(../images/parallax1.png);
+    /* transform: translateY(0); 양수는 밑으로 떨어지고 음수는 위로 올라감 */
+}
+.header .layer.pic2{
+    background-image: url(../images/parallax2.png);
+}
+.header .layer.pic3{
+    background-image: url(../images/parallax3.png);
+}
+.header .layer.pic4{
+    background-image: url(../images/parallax4.png);
+}
+.header .layer.pic5{
+    background-image: url(../images/parallax5.png);
+}
+.header .layer.pic6{
+    background-image: url(../images/parallax6.png);
+}
+.header .layer.pic7{
+    background-image: url(../images/parallax7.png);
+}
+.header .layer.pic8{
+    background-image: url(../images/parallax8.png);
+}
+
+
+.container{width: 100vw;height: 100vh;}
+.conWrap{width: 1000px;margin: 0 auto;background: #fff;}
+
+
+/* common  */
+.brown{background: #210002;}
+.gray{background: gray;}
+.pink{background: pink;}
