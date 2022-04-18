@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="name">이름</div>
+    <script>
+        const view = {
+            // "firstname":"John",
+            // "lastname":"Doe"
+            "employees":[
+                {"firstname":"John", "lastname":"Doe"},
+                {"firstname":"Anna", "lastname":"Smith"},
+                {"firstname":"Peter", "lastname":"Jones"},
+            ]
+        }
+        let nameElem = document.querySelector(".name");
+        // nameElem.innerHTML = view.employees[0].firstname + " " + view.employees[0].lastname
+
+
+        let txt = "";
+        for(let i=0;i<view.employees.length;i++){
+            txt += "<div>"
+            txt += i+1 + ". " + view.employees[i].firstname + " " + view.employees[i].lastname
+            txt += "</div>"
+            // i+1 + ". " +  : 순번을 넣고 싶을 때 (i = 0부터 시작, i+1 = 1부터 시작)
+        }
+        nameElem.innerHTML = txt;
+    </script>
+</body>
+</html>
