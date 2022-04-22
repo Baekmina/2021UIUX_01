@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>{{logo}}</h1>
+            <div class="row">
+                <div class="col-md-6 col-lg-3" v-for="(명작,i) in product">
+                    <img v-bind:src="`../image/${product[i].img}`" class="img-fluid rounded">
+                    <h4>{{product[i].item}}</h4>
+                    <p>{{product[i].price.toLocaleString()}}</p>
+                    <!-- toLocaleString() : 숫자에 돈(,)표시를 넣어주는 것 -->
+                </div>
+            </div>
+        </div>
+
+        <p v-if="show">hello</p>
+        <button v-on:click="show=!show">변경</button>
+        <!-- show=false 라고 적용하면 한번 밖에 변경이 안됨. -->
+    </div>
+
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                logo:"삼천리",
+                show:true,
+                product:[
+                    {
+                    item:"자전거1",
+                    price:10000,
+                    link:"http://www.naver.com",
+                    img:"img1.jpg"
+                    },
+                    {
+                    item:"자전거2",
+                    price:20000,
+                    link:"http://www.naver.com",
+                    img:"img2.jpg"
+                    },
+                    {
+                    item:"자전거3",
+                    price:50000,
+                    link:"http://www.naver.com",
+                    img:"img3.jpg"
+                    },
+                    {
+                    item:"자전거4",
+                    price:100000,
+                    link:"http://www.naver.com",
+                    img:"img4.jpg"
+                    },
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

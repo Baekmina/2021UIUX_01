@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .view{display: flex;}
+    </style>
+</head>
+<body>
+    <div class="word">
+        <!-- <span>순서</span>
+        <span>영어</span>
+        <span>한국어</span> -->
+    </div>
+    <script>
+        const view = [
+            {
+                idx:1,
+                word:"boy1",
+                kor:"소년1",
+                img:"images01.jpg"
+            },
+            {
+                idx:2,
+                word:"boy2",
+                kor:"소년2",
+                img:"images02.jpg"
+            },
+            {
+                idx:3,
+                word:"boy3",
+                kor:"소년3",
+                img:"images03.jpg"
+            },
+            {
+                idx:4,
+                word:"boy4",
+                kor:"소년4",
+                img:"images04.jpg"
+            },
+            {
+                idx:5,
+                word:"boy5",
+                kor:"소년5",
+                img:"images05.jpg"
+            },
+        ];
+
+        let txt="";    
+        for(let i=0;i<view.length;i++){
+            console.log(view[i].word);
+            // txt += "<div>"+ view[i].word +"</div>"
+            txt += `<div class="view">
+                        <div>${view[i].idx}</div>
+                        <div>${view[i].word}</div>
+                        <div>${view[i].kor}</div>
+                        <div><img src="../image/${view[i].img}"></div>
+                    </div>`
+        }
+
+        document.querySelector(".word").innerHTML = txt;
+    </script>
+</body>
+</html>
